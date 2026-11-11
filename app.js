@@ -57,6 +57,7 @@ const PRODUCTS = [
   {
     slug: 'a-mothers-heart',
     name: "A MOTHER'S HEART",
+    category: 'Soaps',
     subtitle: 'Calendula & Pine Needle Soap · 5 oz',
     price: 5.99,
     stock: 'In Stock',
@@ -66,6 +67,7 @@ const PRODUCTS = [
   {
     slug: 'balm-of-good-samaritan-1oz',
     name: 'Balm of Good Samaritan 1oz',
+    category: 'Balms & Salves',
     subtitle: 'Handcrafted Botanical Balm · 1 oz',
     price: 14.99,
     stock: 'In Stock',
@@ -75,6 +77,7 @@ const PRODUCTS = [
   {
     slug: 'balm-of-saint-michael-2oz',
     name: 'Balm of Saint Michael 2oz',
+    category: 'Balms & Salves',
     subtitle: 'Nourishing Herbal Balm · 2 oz',
     price: 13.99,
     stock: 'In Stock',
@@ -84,6 +87,7 @@ const PRODUCTS = [
   {
     slug: 'calendula-body-butter-8oz',
     name: 'Calendula Body Butter – 8 oz',
+    category: 'Oils & Body Care',
     subtitle: 'Whipped Botanical Moisture · 8 oz',
     price: 24.99,
     stock: 'In Stock',
@@ -93,6 +97,7 @@ const PRODUCTS = [
   {
     slug: 'calendula-lip-repair',
     name: 'Calendula Lip Repair',
+    category: 'Balms & Salves',
     subtitle: 'Soothing Botanical Lip Balm',
     price: 2.00,
     stock: 'In Stock',
@@ -102,6 +107,7 @@ const PRODUCTS = [
   {
     slug: 'calendula-oil-7oz',
     name: 'CALENDULA OIL 7oz',
+    category: 'Oils & Body Care',
     subtitle: 'Pure Infused Botanical Oil · 7 oz',
     price: 19.99,
     stock: 'In Stock',
@@ -111,6 +117,7 @@ const PRODUCTS = [
   {
     slug: 'calendula-salve-2oz',
     name: 'CALENDULA SALVE 2oz',
+    category: 'Balms & Salves',
     subtitle: 'Concentrated Soothing Salve · 2 oz',
     price: 14.99,
     stock: 'In Stock',
@@ -120,6 +127,7 @@ const PRODUCTS = [
   {
     slug: 'calendula-geranium-massage-oil-1oz',
     name: 'Calendula/Geranium massage oil 1oz',
+    category: 'Oils & Body Care',
     subtitle: 'Aromatic Botanical Blend · 1 oz',
     price: 14.99,
     stock: 'In Stock',
@@ -129,6 +137,7 @@ const PRODUCTS = [
   {
     slug: 'calendula-geranium-massage-oil-travel',
     name: 'Calendula/Geranium massage oil 1oz (Travel)',
+    category: 'Oils & Body Care',
     subtitle: 'Pilgrimage Travel Edition · 1 oz',
     price: 9.99,
     stock: 'In Stock',
@@ -138,6 +147,7 @@ const PRODUCTS = [
   {
     slug: 'guadalupe-colored-necklace',
     name: 'Guadalupe colored necklace',
+    category: 'Devotional Keepsakes',
     subtitle: 'Devotional Keepsake Jewelry',
     price: 33.00,
     stock: 'In Stock',
@@ -263,7 +273,12 @@ const BLOG_POSTS = [
     date: 'November 2026',
     title: 'Preparing Mind, Spirit, and Luggage for a Family Pilgrimage',
     excerpt: 'Why a pilgrimage with children and family is unlike an ordinary vacation — and practical ways to cultivate intentional prayer before departure.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg',
+    content: [
+      'A Catholic pilgrimage with your children and family is far more than a vacation — it is a sacred invitation to step away from everyday distractions and walk together toward Christ through the Blessed Mother.',
+      'Before departure, we encourage families to establish a simple daily rhythm of prayer: praying the Flame of Love Rosary together at 8:00 PM, keeping a small prayer intention journal for each child, and going to Confession as a family.',
+      'Practically, pack comfortable walking shoes for Apparition Hill and Cross Mountain, modest attire for Holy Mass and Adoration, a refillable water bottle, and a rosary in every child’s pocket.'
+    ]
   },
   {
     id: 'landmarks-of-medjugorje',
@@ -271,7 +286,12 @@ const BLOG_POSTS = [
     date: 'October 2026',
     title: 'A Guide to Apparition Hill, Cross Mountain, and Oasis of Peace',
     excerpt: 'Historical context and walking reflections on the sacred landmarks a short walk from our family-style lodging in Medjugorje.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/element_0-6-819x1024.webp'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/element_0-6-819x1024.webp',
+    content: [
+      'In Medjugorje, our family-style lodging is intentionally situated within walking distance of St. James Church, Apparition Hill (Podbrdo), the Blue Cross, and the Oasis of Peace.',
+      'As families climb Apparition Hill praying the Rosary along the bronze reliefs of the Mysteries, children experience firsthand that faith is an active, joyful journey shared across generations.',
+      'Each day combines Holy Mass, Adoration of the Blessed Sacrament, historical guidance from our trusted local team, and home-cooked meals shared at one family table.'
+    ]
   },
   {
     id: 'botanical-care-on-the-journey',
@@ -279,16 +299,207 @@ const BLOG_POSTS = [
     date: 'October 2026',
     title: 'The Story Behind Our Handcrafted Calendula & Good Samaritan Balms',
     excerpt: 'How traditional botanical oils, soaps, and salves support daily self-care and comfort travelers along the way.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg',
+    content: [
+      'Every balm, salve, and soap in the ATM Travels store is handcrafted in small batches in Dacula, Georgia using slow-infused golden calendula blossoms, pure beeswax, and traditional aromatic essential oils.',
+      'Inspired by Catholic herbal traditions such as the Balm of the Good Samaritan and Balm of Saint Michael, our 1 oz travel oils and soothing salves are designed to accompany pilgrims on long flights and mountain walks while supporting the mission of April-Marie’s Traveling Mary.'
+    ]
   }
 ];
+
+const PILGRIMAGE_FAQS = [
+  {
+    q: 'Are ATM Travels pilgrimages suitable for young children and families?',
+    a: 'Yes! Children and families are at the very heart of April-Marie’s Traveling Mary. Every itinerary in Medjugorje, Italy, and Croatia is paced so children of all ages feel included, with dedicated youth prayer moments, family-style lodging, and ground transportation.'
+  },
+  {
+    q: 'How do the registration deposits and installment deadlines work?',
+    a: 'You can secure your spot with the initial registration deposit ($500 for international pilgrimages; $100 for Mother’s Retreat 2027) via Stripe, then complete your second or third installment by the published 2027 deadline. Make sure to also complete the Google Registration Form for your trip so our team has your rooming and travel details.'
+  },
+  {
+    q: 'How can our family host a Traveling Statue of Our Lady of Grace?',
+    a: 'Our Traveling Statues currently visit homes across Georgia, Maryland, Delaware, North Carolina, Texas, Canada, Arizona, Oklahoma, Cameroon, and Nigeria. Click any location badge on the About Us page (or use the Prayer & Pilgrimage Hub button) to connect with your regional ambassador.'
+  },
+  {
+    q: 'How do we join the nightly 8:00 PM Children’s Flame of Love Rosary on Zoom?',
+    a: 'All families and children are warmly welcome! Click the "Prayer & Pilgrimage Hub" button in the bottom-left corner and select "Join 8:00 PM Zoom Rosary" to request the nightly Zoom details.'
+  }
+];
+
+const SACRED_DESTINATIONS = {
+  medjugorje: {
+    name: 'Medjugorje (Bosnia & Herzegovina)',
+    tagline: 'Walking Distance from Our Family-Style Lodging',
+    summary: 'In Medjugorje, families experience deep peace, daily Holy Mass, Confession, Adoration, and home-cooked family-style meals just a short walk from the sacred landmarks.',
+    landmarks: [
+      { title: 'Apparition Hill (Podbrdo)', desc: 'Climb the hill where Our Lady Queen of Peace first appeared, praying the Holy Rosary together beside the bronze reliefs of the Mysteries.' },
+      { title: 'St. James Parish Church', desc: 'The spiritual heart of Medjugorje — gather each evening for the Rosary, International Holy Mass, and Eucharistic Adoration.' },
+      { title: 'Cross Mountain (Križevac)', desc: 'Pray the Stations of the Cross with children and teens as you ascend to the 1933 jubilee cross overlooking the valley.' },
+      { title: 'Blue Cross & Oasis of Peace', desc: 'Quiet places of Marian devotion, group reflection, and side retreats to Surmanci (Merciful Jesus icon) guided by our local team.' }
+    ]
+  },
+  italy: {
+    name: 'Italy (Rome, Assisi & San Giovanni Rotondo)',
+    tagline: 'Walk with the Saints · Grow in Faith · Be Transformed',
+    summary: 'Journey through the heart of the Church in Italy — encountering Eucharistic miracles, the incorrupt saints who inspire our children, and the major basilicas of Rome.',
+    landmarks: [
+      { title: 'Assisi — Tomb of St. Carlo Acutis', desc: 'Pray with your children before the resting place of Saint Carlo Acutis, patron of youth and model for our Seven Children Adoration ministry, plus St. Francis & St. Clare.' },
+      { title: 'Rome & Vatican City', desc: 'Visit St. Peter’s Basilica, St. Mary Major, St. John Lateran, and walk in the footsteps of the Apostles and early martyrs.' },
+      { title: 'San Giovanni Rotondo — St. Padre Pio', desc: 'Venerate the sanctuary and relics of Saint Pio of Pietrelcina and pray for healing and family conversion.' },
+      { title: 'Lanciano & Loreto', desc: 'Experience the ancient Eucharistic Miracle of Lanciano and the Holy House of Loreto.' }
+    ]
+  },
+  croatia: {
+    name: 'Croatia & Adriatic Shrines',
+    tagline: 'Catholic Heritage & Family Fellowship Along the Adriatic',
+    summary: 'Our combined family pilgrimages include memorable excursions through Croatia’s historic coastal churches and shrines.',
+    landmarks: [
+      { title: 'Zadar & Split Historic Churches', desc: 'Guided visits to centuries-old cathedrals, saint relics, and vibrant Catholic communities along the Dalmatian coast.' },
+      { title: 'Vepric (Croatian Lourdes Sanctuary)', desc: 'A peaceful Marian grotto nestled in the coastal hills where families pause for Rosary and thanksgiving.' },
+      { title: 'Family Fellowship & Rest', desc: 'Shared meals and refreshing coastal stops tailored so children, teens, and parents bond as one pilgrimage village.' },
+      { title: 'Seamless Ground Transfers', desc: 'Full airport pickup, private coach transport, and attentive local guides from arrival to departure.' }
+    ]
+  },
+  rosamystica: {
+    name: 'Rosa Mystica (Edmeston, New York)',
+    tagline: '“She is Our Mother” — Annual Mother’s Spiritual Retreat',
+    summary: 'A sanctuary of renewal in upstate New York where mothers, stepmothers, and mothers-to-be lay down their burdens and experience healing.',
+    landmarks: [
+      { title: 'Holy Mass, Adoration & Confession', desc: 'Daily sacraments, inspiring spiritual leaders, and quiet hours before the Blessed Sacrament.' },
+      { title: '1-on-1 Spiritual Direction & Healing', desc: 'Personal spiritual guidance and prayer sessions that give mothers permission to heal, forgive, and be renewed.' },
+      { title: 'Veneration of Sacred Relics', desc: 'Intimate prayer time with first-class relics of the Saints in Rosa Mystica’s chapels.' },
+      { title: 'Evening Bonfire & Sisterhood', desc: 'Warm reception, delicious meals, and heartfelt testimony sharing around the evening bonfire.' }
+    ]
+  }
+};
+
+const PILGRIMAGE_CHECKLIST_ITEMS = [
+  'Valid Passport (at least 6 months validity beyond return date)',
+  'Complete the Google Registration Form for your selected pilgrimage',
+  'Submit Initial Deposit on Stripe ($500 Pilgrimages / $100 Retreat)',
+  'Family Sacrament of Confession prior to departure',
+  'Join the 8:00 PM Nightly Flame of Love Zoom Rosary to prepare spiritually',
+  'Small Prayer Intention Journal & pen for each child and adult',
+  'Rosaries & Flame of Love prayer booklet in carry-on bag',
+  'Comfortable broken-in walking shoes (for Apparition Hill & Cross Mountain)',
+  'Modest attire for Holy Mass & Basilicas (shoulders & knees covered)',
+  'Travel-size ATM Calendula / Good Samaritan Balm & refillable water bottle'
+];
+
+const FLAME_OF_LOVE_STEPS = [
+  {
+    step: '1. Sign of the Cross',
+    title: 'In Honor of the Five Sacred Wounds',
+    prayer: 'Make the Sign of the Cross five times in honor of the Five Sacred Wounds of Our Lord Jesus Christ, asking for purity of heart as we begin.'
+  },
+  {
+    step: '2. The Unity Prayer',
+    title: 'Jesus’ Prayer of Oneness',
+    prayer: '“May our feet journey together, may our hands gather in unity, may our hearts beat in unison, may our souls be in harmony, may our thoughts be as one, may our ears listen to the silence together, may our glances profoundly penetrate each other, may our lips pray together to gain mercy from the Eternal Father. Amen.”'
+  },
+  {
+    step: '3. Flame of Love Hail Mary',
+    title: 'Prayed on Every Hail Mary Bead',
+    prayer: '“Hail Mary, full of grace, the Lord is with Thee; blessed art Thou among women, and blessed is the fruit of Thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, spread the effect of grace of Thy Flame of Love over all of humanity, now and at the hour of our death. Amen.”'
+  },
+  {
+    step: '4. Decade Aspiration',
+    title: 'After Each Glory Be',
+    prayer: '“O my Jesus, forgive us our sins, save us from the fires of hell, lead all souls to Heaven, especially those most in need of Thy mercy. Come, Holy Spirit! Come by means of the powerful intercession of the Immaculate Heart of Mary, Thy well-beloved Spouse.”'
+  },
+  {
+    step: '5. Prayer for Priests & Children',
+    title: 'ATM Kids & Seven Children Closing',
+    prayer: '“Blessed Mother, Queen of Peace and Our Lady of Grace, bless all priests, bishops, and religious, guard the innocence of our children, and make our homes little domestic churches that lead all souls to Jesus. Amen.”'
+  }
+];
+
+const INITIAL_PRAYER_INTENTIONS = [
+  {
+    id: 501,
+    family: 'The Mbapeh Family (Georgia)',
+    tag: 'Children & Youth Faith',
+    text: 'In thanksgiving for 5 years of ATM KIDS nightly Rosary calls and for all children preparing for their next pilgrimage to Medjugorje.',
+    prayers: 42
+  },
+  {
+    id: 502,
+    family: 'Mothers of Rosa Mystica Retreat',
+    tag: 'Mothers & Families',
+    text: 'For every mother carrying heavy burdens — that through Our Lady’s intercession they may find peace, healing, and spiritual renewal.',
+    prayers: 38
+  },
+  {
+    id: 503,
+    family: 'Seven Children Adoration Apostolate',
+    tag: 'Priests & Vocations',
+    text: 'For our parish priests, Fr. Henry, Fr. Maurice, Fr. Pontianus, and for holy vocations to blossom among our children.',
+    prayers: 51
+  }
+];
+
+// Load persisted state from localStorage safely
+function loadPersistedCart() {
+  try {
+    const raw = localStorage.getItem('atm_cart_v1');
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function savePersistedCart(cart) {
+  try {
+    localStorage.setItem('atm_cart_v1', JSON.stringify(cart));
+  } catch (e) {}
+}
+
+function loadPersistedReviews() {
+  try {
+    const raw = localStorage.getItem('atm_reviews_v1');
+    if (!raw) return [...INITIAL_REVIEWS];
+    const custom = JSON.parse(raw);
+    return [...custom, ...INITIAL_REVIEWS];
+  } catch (e) {
+    return [...INITIAL_REVIEWS];
+  }
+}
+
+function loadPersistedChecklist() {
+  try {
+    const raw = localStorage.getItem('atm_checklist_v1');
+    return raw ? JSON.parse(raw) : [0, 4];
+  } catch (e) {
+    return [0, 4];
+  }
+}
+
+function loadPersistedIntentions() {
+  try {
+    const raw = localStorage.getItem('atm_intentions_v1');
+    return raw ? JSON.parse(raw) : [...INITIAL_PRAYER_INTENTIONS];
+  } catch (e) {
+    return [...INITIAL_PRAYER_INTENTIONS];
+  }
+}
 
 // Application State
 const state = {
   route: '/',
-  cart: [],
-  reviews: [...INITIAL_REVIEWS],
+  cart: loadPersistedCart(),
+  reviews: loadPersistedReviews(),
+  checklistDone: loadPersistedChecklist(),
+  intentions: loadPersistedIntentions(),
+  prayedIds: [],
+  activeDestTab: 'medjugorje',
+  activeRosaryStep: 0,
   shopView: 'grid', // 'grid' | 'list'
+  shopCategory: 'All',
+  shopSearch: '',
+  eventsFilter: 'all', // 'all' | 'family' | 'retreat'
+  calcTrip: 'italy', // 'italy' | 'medjugorje' | 'combined' | 'mothers'
+  calcRoom: 'double',
+  calcTravelers: 1,
   selectedRating: 5,
   singleProductQty: 1
 };
@@ -341,6 +552,7 @@ function addToCart(productSlug, qty = 1, openInstantCheckout = false) {
   } else {
     state.cart.push({ ...product, qty });
   }
+  savePersistedCart(state.cart);
   updateCartUI();
   if (openInstantCheckout) {
     toggleCartDrawer(true);
@@ -352,6 +564,7 @@ window.addToCart = addToCart;
 
 function removeFromCart(slug) {
   state.cart = state.cart.filter(item => item.slug !== slug);
+  savePersistedCart(state.cart);
   updateCartUI();
 }
 window.removeFromCart = removeFromCart;
@@ -415,11 +628,160 @@ function handleCheckoutSubmit() {
     return;
   }
   state.cart = [];
+  savePersistedCart(state.cart);
   updateCartUI();
   toggleCartDrawer(false);
   showToast('Thank you! Your order has been received by ATM Travels.');
 }
 window.handleCheckoutSubmit = handleCheckoutSubmit;
+
+// Lightbox Viewer for Flyers & Past Event Photos
+function openLightbox(src, caption) {
+  const overlay = document.getElementById('lightbox-overlay');
+  const img = document.getElementById('lightbox-img');
+  const cap = document.getElementById('lightbox-caption');
+  if (!overlay || !img || !cap) return;
+  img.src = src;
+  img.alt = caption || 'ATM Travels Photo';
+  cap.textContent = caption || '';
+  overlay.classList.add('open');
+}
+window.openLightbox = openLightbox;
+
+function closeLightbox(e) {
+  if (e && e.target && e.target.id === 'lightbox-img') return;
+  const overlay = document.getElementById('lightbox-overlay');
+  if (overlay) overlay.classList.remove('open');
+}
+window.closeLightbox = closeLightbox;
+
+// Floating Prayer & Pilgrimage Helper
+function toggleFloatingHelper(forceState) {
+  const panel = document.getElementById('floating-panel');
+  if (!panel) return;
+  if (typeof forceState === 'boolean') {
+    panel.classList.toggle('open', forceState);
+  } else {
+    panel.classList.toggle('open');
+  }
+}
+window.toggleFloatingHelper = toggleFloatingHelper;
+
+// Interactive Host a Traveling Statue Modal
+function openStatueModal(region = 'Georgia') {
+  const modal = document.getElementById('registration-modal');
+  const backdrop = document.getElementById('drawer-backdrop');
+  if (!modal || !backdrop) return;
+
+  const regions = ['Georgia', 'Maryland', 'Delaware', 'North Carolina', 'Texas', 'Canada', 'Arizona', 'Oklahoma', 'Cameroon', 'Nigeria', 'Other / Become an Ambassador'];
+  modal.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:16px;">
+      <div>
+        <span class="section-tag" style="margin-bottom:4px;">THE TRAVELING STATUES</span>
+        <h3 style="font-size:22px;">Host Our Lady of Grace in Your Home</h3>
+      </div>
+      <button onclick="closeModal()" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--slate-text);">&times;</button>
+    </div>
+    <p style="font-size:14.5px; margin-bottom:18px;">Welcome a Traveling Statue of Our Lady into your home for daily family prayer and the Holy Rosary, or inquire about becoming a Regional Ambassador.</p>
+    <form onsubmit="submitRegistrationForm(event, 'Traveling Statue Hosting (' + document.getElementById('statue-region-select').value + ')')">
+      <div class="form-group">
+        <label class="form-label">Select Your State / Country *</label>
+        <select id="statue-region-select" class="form-control" required>
+          ${regions.map(r => `<option value="${r}" ${r === region ? 'selected' : ''}>${r}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Family / Contact Full Name *</label>
+        <input type="text" class="form-control" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-control" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone / WhatsApp Number *</label>
+        <input type="tel" class="form-control" placeholder="+1 (404) 000-0000" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Preferred Dates or Ambassador Inquiry</label>
+        <textarea class="form-control" style="min-height:76px;" placeholder="Share your city/parish and whether you wish to host Our Lady or serve as an Ambassador..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-navy btn-block">Request Traveling Statue Visit</button>
+    </form>
+  `;
+  modal.classList.add('open');
+  backdrop.classList.add('open');
+}
+window.openStatueModal = openStatueModal;
+
+// Interactive Ministry Signup Modal (Home Chapel, Daily 8PM Zoom Rosary, Seven Children)
+function openMinistryModal(ministryName = 'Daily Rosary — 8:00 PM Zoom') {
+  const modal = document.getElementById('registration-modal');
+  const backdrop = document.getElementById('drawer-backdrop');
+  if (!modal || !backdrop) return;
+
+  modal.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:16px;">
+      <div>
+        <span class="section-tag" style="margin-bottom:4px;">ATM FAMILY &amp; CHILDREN'S MINISTRY</span>
+        <h3 style="font-size:22px;">${ministryName}</h3>
+      </div>
+      <button onclick="closeModal()" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--slate-text);">&times;</button>
+    </div>
+    <p style="font-size:14.5px; margin-bottom:18px;">Connect with our team in Dacula, Georgia to receive the Zoom link, weekly Adoration schedule, or guidance on setting up your family's Home Chapel.</p>
+    <form onsubmit="submitRegistrationForm(event, '${ministryName.replace(/'/g, "\\'")}')">
+      <div class="form-group">
+        <label class="form-label">Parent / Guardian Name *</label>
+        <input type="text" class="form-control" placeholder="Full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-control" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone / WhatsApp Number *</label>
+        <input type="tel" class="form-control" placeholder="+1 (404) 000-0000" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Children's Names &amp; Ages / Prayer Intentions</label>
+        <textarea class="form-control" style="min-height:76px;" placeholder="Tell us about your family or how we can pray with you..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-navy btn-block">Join ${ministryName}</button>
+    </form>
+  `;
+  modal.classList.add('open');
+  backdrop.classList.add('open');
+}
+window.openMinistryModal = openMinistryModal;
+
+// Blog Article Reader Modal
+function openBlogModal(postId) {
+  const post = BLOG_POSTS.find(p => p.id === postId) || BLOG_POSTS[0];
+  const modal = document.getElementById('registration-modal');
+  const backdrop = document.getElementById('drawer-backdrop');
+  if (!modal || !backdrop) return;
+
+  modal.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:14px;">
+      <div>
+        <span class="section-tag" style="margin-bottom:4px;">${post.category} · ${post.date}</span>
+        <h3 style="font-size:22px;">${post.title}</h3>
+      </div>
+      <button onclick="closeModal()" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--slate-text);">&times;</button>
+    </div>
+    <img src="${post.image}" alt="${post.title}" style="width:100%; max-height:220px; object-fit:cover; border-radius:10px; margin-bottom:16px;" onerror="handleImgError(this, '${post.title}')">
+    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:22px;">
+      ${post.content.map(para => `<p style="font-size:15px; line-height:1.7; color:var(--slate-text); margin:0;">${para}</p>`).join('')}
+    </div>
+    <div style="display:flex; gap:12px; justify-content:flex-end;">
+      <button class="btn btn-outline-navy btn-sm" onclick="closeModal()">Close Article</button>
+      <a href="#/events-and-pilgrimages" class="btn btn-navy btn-sm" onclick="closeModal()">Explore 2027 Pilgrimages</a>
+    </div>
+  `;
+  modal.classList.add('open');
+  backdrop.classList.add('open');
+}
+window.openBlogModal = openBlogModal;
 
 // Pilgrimage Registration Modal
 function openRegistrationModal(eventId) {
@@ -481,10 +843,197 @@ window.closeModal = closeModal;
 
 function submitRegistrationForm(e, title) {
   e.preventDefault();
-  closeModal();
-  showToast(`Registration submitted for ${title}! Our Dacula, GA team will follow up shortly.`);
+  const form = e.target;
+  const inputs = Array.from(form.querySelectorAll('input, select, textarea')).map(el => el.value.trim()).filter(Boolean);
+  const summaryText = `Hello ATM Travels! I just submitted a request for: ${title}.\nDetails: ${inputs.join(' | ')}`;
+  const waUrl = `https://wa.me/14045907020?text=${encodeURIComponent(summaryText)}`;
+  const mailUrl = `mailto:info@atm-travels.org?subject=${encodeURIComponent('ATM Travels Request: ' + title)}&body=${encodeURIComponent(summaryText)}`;
+
+  const modal = document.getElementById('registration-modal');
+  if (modal) {
+    modal.innerHTML = `
+      <div style="text-align:center; padding: 12px 6px;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#dcfce7; color:#15803d; display:inline-flex; align-items:center; justify-content:center; font-size:26px; font-weight:700; margin-bottom:14px;">✓</div>
+        <span class="section-tag" style="margin-bottom:4px;">REQUEST RECORDED</span>
+        <h3 style="font-size:22px; margin-bottom:10px;">Thank You! God Bless Your Journey</h3>
+        <p style="font-size:14.5px; color:var(--slate-text); margin-bottom:20px;">Your request for <strong>${title}</strong> has been logged. For an immediate response from our coordinator in Dacula, Georgia, you can also send your details directly via WhatsApp or Email below:</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-block" onclick="closeModal()">Send Instant WhatsApp (+1-404-590-7020)</a>
+          <a href="${mailUrl}" class="btn btn-outline-navy btn-block" onclick="closeModal()">Send via Email (info@atm-travels.org)</a>
+          <button type="button" class="btn btn-sm" style="background:none; color:var(--slate-text);" onclick="closeModal()">Done</button>
+        </div>
+      </div>
+    `;
+  } else {
+    closeModal();
+  }
+  showToast(`Request submitted for ${title}!`);
 }
 window.submitRegistrationForm = submitRegistrationForm;
+
+// Interactive Prayer Intention Wall & Flame of Love Rosary Guide
+function setRosaryStep(idx) {
+  state.activeRosaryStep = idx;
+  const box = document.getElementById('rosary-interactive-container');
+  if (box) {
+    box.outerHTML = renderRosaryGuideHTML();
+  } else {
+    renderApp();
+  }
+}
+window.setRosaryStep = setRosaryStep;
+
+function prayForIntention(id) {
+  if (state.prayedIds.includes(id)) {
+    showToast('Thank you for uniting your prayers with this family!');
+    return;
+  }
+  state.prayedIds.push(id);
+  const item = state.intentions.find(i => i.id === id);
+  if (item) {
+    item.prayers += 1;
+    try {
+      localStorage.setItem('atm_intentions_v1', JSON.stringify(state.intentions));
+    } catch (e) {}
+  }
+  const wallEl = document.getElementById('prayer-wall-cards');
+  if (wallEl) {
+    wallEl.innerHTML = renderIntentionCardsHTML();
+  }
+  showToast('🙏 Amen! Your prayer has been added to this family intention.');
+}
+window.prayForIntention = prayForIntention;
+
+function openIntentionModal() {
+  const modal = document.getElementById('registration-modal');
+  const backdrop = document.getElementById('drawer-backdrop');
+  if (!modal || !backdrop) return;
+
+  modal.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:16px;">
+      <div>
+        <span class="section-tag" style="margin-bottom:4px;">COMMUNITY PRAYER WALL</span>
+        <h3 style="font-size:22px;">Submit a Family Prayer Intention</h3>
+      </div>
+      <button onclick="closeModal()" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--slate-text);">&times;</button>
+    </div>
+    <p style="font-size:14.5px; margin-bottom:18px;">Share your prayer petition so our ATM KIDS nightly Rosary group and pilgrims traveling to Medjugorje, Italy, and Rosa Mystica can lift your family up in prayer.</p>
+    <form onsubmit="submitIntentionForm(event)">
+      <div class="form-group">
+        <label class="form-label">Family or First Name &amp; State/Country *</label>
+        <input id="intention-family-input" type="text" class="form-control" placeholder="e.g., The Nfor Family (Georgia)" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Intention Category *</label>
+        <select id="intention-tag-input" class="form-control" required>
+          <option value="Family & Children">Family &amp; Children</option>
+          <option value="Healing & Peace">Healing &amp; Peace</option>
+          <option value="Thanksgiving">Thanksgiving to Our Lady</option>
+          <option value="Priests & Vocations">Priests &amp; Vocations</option>
+          <option value="Pilgrimage Graces">Pilgrimage Graces</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your Prayer Intention *</label>
+        <textarea id="intention-text-input" class="form-control" style="min-height:86px;" placeholder="Write your prayer petition here..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-navy btn-block">Post Prayer Intention</button>
+    </form>
+  `;
+  modal.classList.add('open');
+  backdrop.classList.add('open');
+}
+window.openIntentionModal = openIntentionModal;
+
+function submitIntentionForm(e) {
+  e.preventDefault();
+  const family = document.getElementById('intention-family-input').value.trim();
+  const tag = document.getElementById('intention-tag-input').value;
+  const text = document.getElementById('intention-text-input').value.trim();
+  if (!family || !text) return;
+
+  state.intentions.unshift({
+    id: Date.now(),
+    family,
+    tag,
+    text,
+    prayers: 1
+  });
+  try {
+    localStorage.setItem('atm_intentions_v1', JSON.stringify(state.intentions));
+  } catch (err) {}
+
+  closeModal();
+  renderApp();
+  showToast('🙏 Your prayer intention has been added to the ATM Prayer Wall.');
+}
+window.submitIntentionForm = submitIntentionForm;
+
+function renderIntentionCardsHTML() {
+  return state.intentions.slice(0, 6).map(item => {
+    const hasPrayed = state.prayedIds.includes(item.id);
+    return `
+      <div class="intention-card">
+        <div>
+          <div style="font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-accent); font-weight:700; margin-bottom:6px;">${item.tag}</div>
+          <p style="font-size:14.5px; color:var(--navy-dark); line-height:1.65; margin-bottom:16px;">“${item.text}”</p>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding-top:12px; border-top:1px solid var(--border-gray);">
+          <span style="font-size:13px; font-weight:600; color:var(--slate-text);">— ${item.family}</span>
+          <button type="button" class="pray-btn ${hasPrayed ? 'prayed' : ''}" onclick="prayForIntention(${item.id})">
+            <span>🙏</span>
+            <span>${hasPrayed ? 'Prayed' : 'Pray'} (${item.prayers})</span>
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderRosaryGuideHTML() {
+  const stepObj = FLAME_OF_LOVE_STEPS[state.activeRosaryStep] || FLAME_OF_LOVE_STEPS[0];
+  return `
+    <div id="rosary-interactive-container" class="rosary-guide-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div>
+          <span class="section-tag light" style="margin-bottom:4px;">INTERACTIVE CHILDREN &amp; FAMILY PRAYER GUIDE</span>
+          <h3 style="color:var(--white); font-size:22px; margin:0;">How to Pray the Flame of Love Rosary (8:00 PM Nightly Zoom)</h3>
+        </div>
+        <button type="button" class="btn btn-white btn-sm" onclick="openMinistryModal('Daily Rosary — 8:00 PM Zoom')">Get 8:00 PM Zoom Link</button>
+      </div>
+      <div class="rosary-steps-bar">
+        ${FLAME_OF_LOVE_STEPS.map((s, idx) => `
+          <button type="button" class="rosary-step-pill ${state.activeRosaryStep === idx ? 'active' : ''}" onclick="setRosaryStep(${idx})">${s.step}</button>
+        `).join('')}
+      </div>
+      <div style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:20px 24px;">
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-soft); font-weight:700; margin-bottom:6px;">${stepObj.title}</div>
+        <p style="color:var(--white); font-size:16px; line-height:1.75; margin:0;">${stepObj.prayer}</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderPrayerWallSection() {
+  return `
+    <section class="section" style="padding-top:20px;">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:12px;">
+          <div>
+            <span class="section-tag">UNITED IN PRAYER</span>
+            <h2 style="margin-bottom:6px;">Pilgrimage Prayer Intention Wall</h2>
+            <p style="margin:0; max-width:640px;">Lift up fellow families in prayer or submit your own intention to be carried by ATM Travels to Medjugorje, Italy, and Rosa Mystica.</p>
+          </div>
+          <button type="button" class="btn btn-navy btn-sm" onclick="openIntentionModal()">+ Submit Prayer Intention</button>
+        </div>
+        <div id="prayer-wall-cards" class="intention-grid">
+          ${renderIntentionCardsHTML()}
+        </div>
+        ${renderRosaryGuideHTML()}
+      </div>
+    </section>
+  `;
+}
 
 // Page Renderers
 function renderReviewsCards() {
@@ -596,6 +1145,8 @@ function renderHomePage() {
       </div>
     </section>
 
+    ${renderPrayerWallSection()}
+
     <!-- Share Your Experience -->
     <section class="section">
       <div class="container">
@@ -689,7 +1240,7 @@ function renderAboutPage() {
 
         <div class="about-ministry-grid">
           <!-- Home Based Chapels -->
-          <div class="about-ministry-card">
+          <div class="about-ministry-card reveal-on-scroll">
             <div class="ministry-bullet-badge">• Home Based Chapels</div>
             <h3>Home Based Chapels</h3>
             <p>Our faith is not meant to be lived only within the walls of a church. We encourage families to create a dedicated sacred space within their homes—a place set apart for daily prayer, reflection, and gathering as a family.</p>
@@ -699,12 +1250,12 @@ function renderAboutPage() {
             <p style="font-weight:600; color:var(--navy-dark);">Your home can become a place of prayer. Your family can become a little domestic church.</p>
             <p>If you desire assistance in creating your own sacred space, we are here to serve you.</p>
             <div style="margin-top:18px;">
-              <a href="#/contact" class="btn btn-outline-navy btn-sm">Request Home Chapel Guidance</a>
+              <button type="button" class="btn btn-outline-navy btn-sm" onclick="openMinistryModal('Home Based Chapels Guidance')">Request Home Chapel Guidance</button>
             </div>
           </div>
 
           <!-- THE TRAVELING STATUES -->
-          <div class="about-ministry-card">
+          <div class="about-ministry-card reveal-on-scroll">
             <div class="ministry-bullet-badge">• THE TRAVELING STATUES</div>
             <h3>THE TRAVELING STATUES</h3>
             <div style="font-weight:600; color:var(--gold-accent); margin-bottom:14px;">Bringing Our Lady Into the Home, Bringing Families Closer to Christ</div>
@@ -714,9 +1265,11 @@ function renderAboutPage() {
 
             <div class="locations-box">
               <h4>Would You Like to Host Our Lady?</h4>
-              <p style="font-size:14.5px; margin-bottom:10px;">The Traveling Statues are currently available in designated locations, including:</p>
+              <p style="font-size:14.5px; margin-bottom:10px;">Click your state or country below to request a Traveling Statue visit in your home:</p>
               <div class="locations-pills">
-                Georgia • Maryland • Delaware • North Carolina • Texas • Canada • Arizona • Oklahoma • Cameroon • Nigeria
+                ${['Georgia', 'Maryland', 'Delaware', 'North Carolina', 'Texas', 'Canada', 'Arizona', 'Oklahoma', 'Cameroon', 'Nigeria'].map(loc => `
+                  <button type="button" class="location-chip" onclick="openStatueModal('${loc}')">✦ ${loc}</button>
+                `).join('')}
               </div>
             </div>
 
@@ -731,8 +1284,9 @@ function renderAboutPage() {
               <div>Hearts are transformed.</div>
               <div>And all are led to Christ.</div>
             </div>
-            <div style="margin-top:18px;">
-              <a href="#/contact" class="btn btn-navy btn-sm">Host a Traveling Statue / Become an Ambassador</a>
+            <div style="margin-top:18px; display:flex; flex-wrap:wrap; gap:10px;">
+              <button type="button" class="btn btn-navy btn-sm" onclick="openStatueModal('Georgia')">Host a Traveling Statue</button>
+              <button type="button" class="btn btn-outline-navy btn-sm" onclick="openStatueModal('Other / Become an Ambassador')">Become an Ambassador</button>
             </div>
           </div>
         </div>
@@ -749,7 +1303,7 @@ function renderAboutPage() {
 
         <div class="about-ministry-grid">
           <!-- DAILY ROSARY -->
-          <div class="about-ministry-card">
+          <div class="about-ministry-card reveal-on-scroll">
             <div class="ministry-bullet-badge">• DAILY ROSARY</div>
             <h3>DAILY ROSARY</h3>
             <p>As a Marian group, we gather daily to pray the Flame of Love Rosary, a devotion that our children have grown to cherish and embrace.</p>
@@ -764,10 +1318,13 @@ function renderAboutPage() {
             </blockquote>
 
             <p style="font-weight:500; color:var(--navy-dark);">Through the prayers of our children, may many souls be drawn closer to Christ through the heart of His Blessed Mother.</p>
+            <div style="margin-top:18px;">
+              <button type="button" class="btn btn-navy btn-sm" onclick="openMinistryModal('Daily Rosary — 8:00 PM Zoom')">Join Nightly 8:00 PM Zoom Rosary</button>
+            </div>
           </div>
 
           <!-- SEVEN CHILDREN -->
-          <div class="about-ministry-card">
+          <div class="about-ministry-card reveal-on-scroll">
             <div class="ministry-bullet-badge">• SEVEN CHILDREN</div>
             <h3>SEVEN CHILDREN</h3>
             <p>Seven Children is an initiative within the ATM family, inspired by two pivotal events. During adoration, the founder experienced a profound call to encourage more people—especially children—to adore the Lord in the Blessed Sacrament. This call was reinforced by the Lord’s expressed longing for companionship: “because I am lonely.” In response, she established an adoration group specifically for children, recognizing that their pure prayers touch the Lord’s heart in a profound way.</p>
@@ -775,7 +1332,7 @@ function renderAboutPage() {
             <p>Inspired by the life of Saint Carlo Acutis, who possessed a deep love for the Eucharist and serves as an exemplary role model for children, we hope to plant the beautiful seed of Eucharistic adoration in the hearts of our young people while praying for an increase in vocations among them.</p>
             <p style="font-weight:500; color:var(--navy-dark);">Please contact us if you feel called to join this inspiring mission. We look forward to welcoming you.</p>
             <div style="margin-top:18px;">
-              <a href="#/contact" class="btn btn-outline-navy btn-sm">Join Seven Children Ministry</a>
+              <button type="button" class="btn btn-outline-navy btn-sm" onclick="openMinistryModal('Seven Children Weekly Adoration')">Join Seven Children Ministry</button>
             </div>
           </div>
         </div>
@@ -785,7 +1342,7 @@ function renderAboutPage() {
     <!-- Our Story -->
     <section class="section" style="padding-top:10px;">
       <div class="container">
-        <div class="about-story-banner">
+        <div class="about-story-banner reveal-on-scroll">
           <span class="section-tag light">THE ORIGIN OF TRAVELING MARY</span>
           <h2 style="color:var(--white); margin-bottom:22px;">Our Story</h2>
           <p>Sometime in late 2019, I repeatedly heard the words “Traveling Mary.” On February 27, 2020 I felt strongly that Our Lady was calling us to begin a Traveling Mary Mission so she could visit homes, be known, and inspire greater devotion. I also felt called to begin it in my daughter, April-Marie’s name. I took this request to prayer and shared it with a friend, who prayed about it as well.</p>
@@ -796,39 +1353,453 @@ function renderAboutPage() {
         </div>
       </div>
     </section>
+
+    ${renderPrayerWallSection()}
+  `;
+}
+
+// Interactive Sacred Destinations Explorer & Checklist Helpers
+function setDestTab(key) {
+  state.activeDestTab = key;
+  const explorerEl = document.getElementById('dest-explorer-box');
+  if (explorerEl) {
+    explorerEl.outerHTML = renderDestinationsExplorer();
+  } else {
+    renderApp();
+  }
+}
+window.setDestTab = setDestTab;
+
+function renderDestinationsExplorer() {
+  const dest = SACRED_DESTINATIONS[state.activeDestTab] || SACRED_DESTINATIONS.medjugorje;
+  const keys = [
+    { id: 'medjugorje', label: '✦ Medjugorje' },
+    { id: 'italy', label: '✦ Italy (Rome, Assisi & Padre Pio)' },
+    { id: 'croatia', label: '✦ Croatia & Adriatic' },
+    { id: 'rosamystica', label: '✦ Rosa Mystica, NY' }
+  ];
+  return `
+    <div id="dest-explorer-box" class="dest-explorer-card">
+      <span class="section-tag" style="margin-bottom:4px;">SACRED DESTINATIONS EXPLORER</span>
+      <h2 style="font-size:28px; margin-bottom:14px;">Where We Walk &amp; Pray Together</h2>
+      <div class="dest-tabs" role="tablist" aria-label="Sacred Destinations">
+        ${keys.map(k => `
+          <button type="button" class="dest-tab-btn ${state.activeDestTab === k.id ? 'active' : ''}" onclick="setDestTab('${k.id}')">${k.label}</button>
+        `).join('')}
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-accent); font-weight:700; margin-bottom:4px;">${dest.tagline}</div>
+        <h3 style="font-size:22px; margin-bottom:8px;">${dest.name}</h3>
+        <p style="font-size:15px; color:var(--slate-text); max-width:820px; margin-bottom:18px;">${dest.summary}</p>
+        <div class="dest-landmarks-grid">
+          ${dest.landmarks.map(lm => `
+            <div class="dest-landmark-item">
+              <h4>${lm.title}</h4>
+              <p>${lm.desc}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleChecklistItem(idx) {
+  const pos = state.checklistDone.indexOf(idx);
+  if (pos >= 0) {
+    state.checklistDone.splice(pos, 1);
+  } else {
+    state.checklistDone.push(idx);
+  }
+  try {
+    localStorage.setItem('atm_checklist_v1', JSON.stringify(state.checklistDone));
+  } catch (e) {}
+  const box = document.getElementById('checklist-interactive-box');
+  if (box) {
+    box.outerHTML = renderChecklistSection();
+  }
+}
+window.toggleChecklistItem = toggleChecklistItem;
+
+function renderChecklistSection() {
+  const total = PILGRIMAGE_CHECKLIST_ITEMS.length;
+  const doneCount = state.checklistDone.length;
+  const pct = Math.round((doneCount / total) * 100);
+  return `
+    <div id="checklist-interactive-box" class="checklist-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+        <div>
+          <span class="section-tag" style="margin-bottom:4px;">SPIRITUAL &amp; PRACTICAL PREPARATION</span>
+          <h2 style="font-size:26px; margin-bottom:6px;">Interactive Family Pilgrimage Checklist</h2>
+          <p style="font-size:14.5px; color:var(--slate-text); margin:0;">Check off each step as your family prepares heart, mind, and luggage. Your progress is automatically saved on your device.</p>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <span style="font-weight:700; color:var(--navy-dark); font-size:15px;">${doneCount} / ${total} Ready (${pct}%)</span>
+          <button type="button" class="btn btn-outline-navy btn-sm" onclick="window.print()">Print / Save PDF</button>
+        </div>
+      </div>
+      <div class="progress-bar-track" aria-label="Checklist completion ${pct}%">
+        <div class="progress-bar-fill" style="width:${pct}%;"></div>
+      </div>
+      <div class="checklist-grid">
+        ${PILGRIMAGE_CHECKLIST_ITEMS.map((text, idx) => {
+          const isChecked = state.checklistDone.includes(idx);
+          return `
+            <label class="checklist-item ${isChecked ? 'checked' : ''}" onclick="event.preventDefault(); toggleChecklistItem(${idx})">
+              <input type="checkbox" ${isChecked ? 'checked' : ''} readonly />
+              <span style="font-size:14.5px;">${text}</span>
+            </label>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// Interactive Pilgrimage Calculator & Filter Helpers
+const CALCULATOR_PLANS = {
+  italy: {
+    name: 'Pilgrimage to Italy (Walk with the Saints)',
+    deposit: 500,
+    depositDue: 'Dec 30, 2026',
+    doubleBalance: 1410,
+    singleBalance: 1910,
+    balanceDue: 'May 17, 2027',
+    stripeDepositUrl: 'https://buy.stripe.com/9B64gz2Ro3CV6Z00KwfAc0g'
+  },
+  medjugorje: {
+    name: 'Children & Family Pilgrimage to Italy, Croatia & Medjugorje',
+    deposit: 500,
+    depositDue: 'Jan 31, 2027',
+    doubleBalance: 850,
+    singleBalance: 975,
+    balanceDue: 'May 17, 2027',
+    stripeDepositUrl: 'https://buy.stripe.com/fZubJ1fEaehzbfgdxifAc0j'
+  },
+  combined: {
+    name: 'Combined Pilgrimage 2027',
+    deposit: 500,
+    depositDue: 'Mar 30, 2027',
+    doubleBalance: 1500,
+    singleBalance: 1550,
+    balanceDue: 'Jul 25, 2027',
+    stripeDepositUrl: 'https://buy.stripe.com/dRm14neA68Xfcjk78UfAc0m'
+  },
+  mothers: {
+    name: 'Mother’s Retreat 2027',
+    deposit: 100,
+    depositDue: 'Mar 30, 2027',
+    doubleBalance: 400,
+    singleBalance: 490,
+    balanceDue: 'Jul 25, 2027',
+    stripeDepositUrl: 'https://buy.stripe.com/cNi3cv3Vsb5n4QS1OAfAc0t'
+  }
+};
+
+function updateCalcState() {
+  const tripSel = document.getElementById('calc-trip-select');
+  const roomSel = document.getElementById('calc-room-select');
+  const travInput = document.getElementById('calc-travelers-input');
+  if (tripSel) state.calcTrip = tripSel.value;
+  if (roomSel) state.calcRoom = roomSel.value;
+  if (travInput) state.calcTravelers = Math.max(1, Math.min(12, parseInt(travInput.value, 10) || 1));
+
+  const plan = CALCULATOR_PLANS[state.calcTrip] || CALCULATOR_PLANS.italy;
+  const count = state.calcTravelers;
+  const perPersonDeposit = plan.deposit;
+  const perPersonBalance = state.calcRoom === 'single' ? plan.singleBalance : plan.doubleBalance;
+  const totalDeposit = perPersonDeposit * count;
+  const totalBalance = perPersonBalance * count;
+  const grandTotal = totalDeposit + totalBalance;
+
+  const summaryEl = document.getElementById('calc-Dynamic-Summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <div style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--slate-text); margin-bottom:4px;">ESTIMATE FOR ${count} PILGRIM${count > 1 ? 'S' : ''} (${state.calcRoom.toUpperCase()})</div>
+      <div style="font-size:22px; font-weight:800; color:var(--navy-dark); margin-bottom:4px;">$${grandTotal.toLocaleString()} Total</div>
+      <div style="font-size:13px; color:var(--slate-text); margin-bottom:10px;">
+        Deposit Due (${plan.depositDue}): <strong>$${totalDeposit.toLocaleString()}</strong> · Balance (${plan.balanceDue}): <strong>$${totalBalance.toLocaleString()}</strong>
+      </div>
+      <a href="${plan.stripeDepositUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-sm btn-block">Pay $${perPersonDeposit} Deposit on Stripe &rarr;</a>
+    `;
+  }
+}
+window.updateCalcState = updateCalcState;
+
+function setEventsFilter(filter) {
+  state.eventsFilter = filter;
+  renderApp();
+}
+window.setEventsFilter = setEventsFilter;
+
+function toggleFaqItem(idx) {
+  const item = document.getElementById(`faq-item-${idx}`);
+  if (item) item.classList.toggle('open');
+}
+window.toggleFaqItem = toggleFaqItem;
+
+function renderFaqSection() {
+  return `
+    <div style="margin-top:64px;">
+      <div class="section-header centered">
+        <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>Pilgrimage &amp; Ministry FAQ</h2>
+        <p>Click any question below for details on traveling with children, payment installments, and hosting Our Lady.</p>
+      </div>
+      <div style="max-width:860px; margin:0 auto;">
+        ${PILGRIMAGE_FAQS.map((item, idx) => `
+          <div id="faq-item-${idx}" class="faq-item ${idx === 0 ? 'open' : ''}">
+            <button type="button" class="faq-question" onclick="toggleFaqItem(${idx})">
+              <span>${item.q}</span>
+              <span style="color:var(--gold-accent); font-size:20px; font-weight:700;">+</span>
+            </button>
+            <div class="faq-answer">${item.a}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
   `;
 }
 
 function renderEventsPage() {
-  return `
-    <section class="subpage-hero">
-      <div class="container">
-        <span class="section-tag">SACRED JOURNEYS & RETREATS</span>
-        <h1 style="margin-bottom:16px;">Events and Pilgrimages</h1>
-        <p style="max-width:680px; margin-bottom:44px;">Explore upcoming family pilgrimages and retreats, review installment schedules and registration deadlines, and reserve your spot.</p>
+  const showFamily = state.eventsFilter === 'all' || state.eventsFilter === 'family';
+  const showRetreat = state.eventsFilter === 'all' || state.eventsFilter === 'retreat';
+  const plan = CALCULATOR_PLANS[state.calcTrip] || CALCULATOR_PLANS.italy;
+  const count = state.calcTravelers;
+  const perPersonDeposit = plan.deposit;
+  const perPersonBalance = state.calcRoom === 'single' ? plan.singleBalance : plan.doubleBalance;
+  const totalDeposit = perPersonDeposit * count;
+  const totalBalance = perPersonBalance * count;
+  const grandTotal = totalDeposit + totalBalance;
 
-        ${UPCOMING_EVENTS.map(ev => `
-          <div class="pilgrimage-tier-card">
-            <img src="${ev.image}" alt="${ev.title}" onerror="handleImgError(this, '${ev.title}')">
+  return `
+    <!-- Events & Pilgrimages Hero Banner (.elementor-element-85c350e) -->
+    <section class="events-hero-banner">
+      <div class="container">
+        <h1>Events &amp; Pilgrimages</h1>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 44px;">
+      <div class="container">
+
+        <!-- Live Countdown Banner -->
+        <div class="countdown-banner">
+          <div>
+            <span class="section-tag light" style="margin-bottom:4px;">UPCOMING REGISTRATION DEADLINE</span>
+            <h3 style="color:var(--white); font-size:22px; margin-bottom:4px;">2027 Italy, Croatia &amp; Medjugorje Pilgrimages</h3>
+            <p style="color:rgba(255,255,255,0.82); font-size:14px; margin:0;">Reserve your family's spot before the initial deposit window closes. Click any flyer below to enlarge.</p>
+          </div>
+          <div class="countdown-timers" id="live-countdown-box">
+            <div class="countdown-unit"><span class="countdown-num" id="cd-days">49</span><span class="countdown-label">Days</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="cd-hours">08</span><span class="countdown-label">Hours</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="cd-mins">45</span><span class="countdown-label">Mins</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="cd-secs">12</span><span class="countdown-label">Secs</span></div>
+          </div>
+        </div>
+
+        <!-- Interactive Pilgrimage Cost & Installment Calculator -->
+        <div class="calc-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
             <div>
-              <span class="section-tag">${ev.tag}</span>
-              <h2 style="font-size:30px; margin-bottom:12px;">${ev.title}</h2>
-              <p style="margin-bottom:18px;">${ev.subtitle}</p>
-              <ul class="tier-list">
-                ${ev.tiers.map(t => `
-                  <li>
-                    <span style="font-weight:500; color:var(--navy-dark);">${t.label}</span>
-                    <span class="tier-price">$${t.price.toLocaleString()}</span>
-                  </li>
-                `).join('')}
-              </ul>
-              <div style="display:flex; gap:14px; flex-wrap:wrap;">
-                <button class="btn btn-navy" onclick="openRegistrationModal('${ev.id}')">Registration Form</button>
-                <a href="#/contact" class="btn btn-outline-navy">Ask a Question</a>
+              <span class="section-tag" style="margin-bottom:4px;">INTERACTIVE PLANNER</span>
+              <h3 style="font-size:22px; margin:0;">Pilgrimage Installment &amp; Family Cost Calculator</h3>
+            </div>
+            <span style="font-size:13.5px; color:var(--slate-text);">Estimate your deposit &amp; 2027 balance in seconds</span>
+          </div>
+          <div class="calc-grid">
+            <div>
+              <label class="form-label" for="calc-trip-select">1. Choose Pilgrimage or Retreat</label>
+              <select id="calc-trip-select" class="form-control" onchange="updateCalcState()">
+                <option value="italy" ${state.calcTrip === 'italy' ? 'selected' : ''}>Pilgrimage to Italy ($1,910)</option>
+                <option value="medjugorje" ${state.calcTrip === 'medjugorje' ? 'selected' : ''}>Italy, Croatia &amp; Medjugorje ($1,350–$1,475)</option>
+                <option value="combined" ${state.calcTrip === 'combined' ? 'selected' : ''}>Combined Pilgrimage ($2,000–$2,050)</option>
+                <option value="mothers" ${state.calcTrip === 'mothers' ? 'selected' : ''}>Mother's Retreat 2027 ($500–$590)</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="calc-room-select">2. Room Preference</label>
+              <select id="calc-room-select" class="form-control" onchange="updateCalcState()">
+                <option value="double" ${state.calcRoom === 'double' ? 'selected' : ''}>Double Occupancy Room</option>
+                <option value="single" ${state.calcRoom === 'single' ? 'selected' : ''}>Single Room Option</option>
+              </select>
+            </div>
+            <div>
+              <label class="form-label" for="calc-travelers-input">3. Pilgrims</label>
+              <input id="calc-travelers-input" type="number" min="1" max="12" value="${state.calcTravelers}" class="form-control" oninput="updateCalcState()" />
+            </div>
+            <div id="calc-Dynamic-Summary" class="calc-summary-box">
+              <div style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--slate-text); margin-bottom:4px;">ESTIMATE FOR ${count} PILGRIM${count > 1 ? 'S' : ''} (${state.calcRoom.toUpperCase()})</div>
+              <div style="font-size:22px; font-weight:800; color:var(--navy-dark); margin-bottom:4px;">$${grandTotal.toLocaleString()} Total</div>
+              <div style="font-size:13px; color:var(--slate-text); margin-bottom:10px;">
+                Deposit Due (${plan.depositDue}): <strong>$${totalDeposit.toLocaleString()}</strong> · Balance (${plan.balanceDue}): <strong>$${totalBalance.toLocaleString()}</strong>
               </div>
+              <a href="${plan.stripeDepositUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-sm btn-block">Pay $${perPersonDeposit} Deposit on Stripe &rarr;</a>
             </div>
           </div>
-        `).join('')}
+        </div>
+
+        <!-- Category Filter Bar -->
+        <div class="filter-bar">
+          <div class="filter-pills" role="tablist" aria-label="Filter Pilgrimages">
+            <button type="button" class="filter-pill ${state.eventsFilter === 'all' ? 'active' : ''}" onclick="setEventsFilter('all')">All Journeys (4)</button>
+            <button type="button" class="filter-pill ${state.eventsFilter === 'family' ? 'active' : ''}" onclick="setEventsFilter('family')">Family &amp; International Pilgrimages (3)</button>
+            <button type="button" class="filter-pill ${state.eventsFilter === 'retreat' ? 'active' : ''}" onclick="setEventsFilter('retreat')">Mother’s &amp; Spiritual Retreats (1)</button>
+          </div>
+          <div style="font-size:13.5px; color:var(--slate-text);">🔍 Tip: Click any pilgrimage flyer image to view fullscreen</div>
+        </div>
+
+        ${showFamily ? `
+        <!-- Section 1: Pilgrimage to Italy (17eb8491) -->
+        <div class="events-split-row">
+          <div class="events-flyer-col">
+            <img
+              src="https://atm-travels.org/wp-content/uploads/2026/11/Gemini_Generated_Image_kia46pkia46pkia4-768x1095.jpg"
+              alt="Pilgrimage ATM travels"
+              style="cursor:zoom-in;"
+              onclick="openLightbox(this.src, 'Pilgrimage to Italy — Walk with the Saints')"
+              onerror="handleImgError(this, 'Pilgrimage to Italy')"
+            />
+          </div>
+          <div class="events-installment-stack">
+            <div class="events-installment-card">
+              <h2>Registration $500</h2>
+              <p>A nonrefundable deposit of $500 is required on or before December 30, 2026, to secure your spot on the pilgrimage. This payment will be credited as part of the total fee of $1,910.</p>
+              <a class="btn-amber" href="https://buy.stripe.com/9B64gz2Ro3CV6Z00KwfAc0g" target="_blank" rel="noopener noreferrer">Registration</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Second Installment($1410)</h2>
+              <p>The remaining balance of $1,410 must be paid by May 17th, 2027.</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/8x2aEXajQ4GZ5UW78UfAc0i" target="_blank" rel="noopener noreferrer">Second installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Single Room second installment ($1910)</h2>
+              <p>The remaining balance of $975 for single room must be paid on or before May 17th, 2027.</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/cNi3cveA6c9r6Z0fFqfAc0h" target="_blank" rel="noopener noreferrer">Full Installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <p>To help us better prepare for our upcoming pilgrimage, Please click on the link below to complete the form. The information you provide will help us plan more effectively and ensure that we are prepared to meet everyone’s needs .”</p>
+              <a class="btn-amber" href="https://docs.google.com/forms/d/e/1FAIpQLSet2Spg7BXRoAyNu9uKfYPFUfCqUXcZKKc1BPCLHRRM_VgT9A/viewform?usp=sharing&ouid=113846059753696108974" target="_blank" rel="noopener noreferrer">Registration Form</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Children and Family Pilgrimage to Italy, Croatia & Medjugorje (76c84df1) -->
+        <div class="events-split-row">
+          <div class="events-flyer-col">
+            <img
+              src="https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg"
+              alt="Children and Family Pilgrimage to Italy, Croatia and Medjugorje"
+              style="cursor:zoom-in;"
+              onclick="openLightbox(this.src, 'Children and Family Pilgrimage to Italy, Croatia and Medjugorje')"
+              onerror="handleImgError(this, 'Italy, Croatia & Medjugorje')"
+            />
+          </div>
+          <div class="events-installment-stack">
+            <div class="events-installment-card">
+              <h2>Registration $500</h2>
+              <p>A nonrefundable deposit of $500 is required on or before January 31, 2027, to secure your spot on the pilgrimage. This payment will be credited as part of the total fee of $1350 + $39.45 fees for Double room and $1475 + $43.08 fees.</p>
+              <a class="btn-amber" href="https://buy.stripe.com/fZubJ1fEaehzbfgdxifAc0j" target="_blank" rel="noopener noreferrer">Registration</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Double Room Second Installment($850)</h2>
+              <p>The remaining balance of $850 for double room must be paid on or before May 17th, 2027.</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/eVq4gzajQddv8341OAfAc0r" target="_blank" rel="noopener noreferrer">Second installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Single Room second installment ($975)</h2>
+              <p>The remaining balance of $975 for single room must be paid on or before May 17th, 2027.</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/5kQ4gz63AflDgzActefAc0q" target="_blank" rel="noopener noreferrer">Single Room second installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <p>To help us better prepare for our upcoming pilgrimage, Please click on the link below to complete the form. The information you provide will help us plan more effectively and ensure that we are prepared to meet everyone’s needs .”</p>
+              <a class="btn-amber" href="https://docs.google.com/forms/d/e/1FAIpQLSdLBO75DbFl0sI2LKsL_jZlua3TywtCiUieTofkY5o5VDM35A/viewform?usp=sharing&ouid=113846059753696108974" target="_blank" rel="noopener noreferrer">Registration Form</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Combined Pilgrimage (32a55dcc) -->
+        <div class="events-split-row">
+          <div class="events-flyer-col">
+            <img
+              src="https://atm-travels.org/wp-content/uploads/2026/11/combine-pilgaimage-2-copy-2-768x1086.jpg"
+              alt="Combined Pilgrimage"
+              style="cursor:zoom-in;"
+              onclick="openLightbox(this.src, 'Combined Pilgrimage 2027')"
+              onerror="handleImgError(this, 'Combined Pilgrimage')"
+            />
+          </div>
+          <div class="events-installment-stack">
+            <div class="events-installment-card">
+              <h2>Registration $500</h2>
+              <p>$500 registration required by March 30th, 2027</p>
+              <a class="btn-amber" href="https://buy.stripe.com/dRm14neA68Xfcjk78UfAc0m" target="_blank" rel="noopener noreferrer">Registration</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Second installment ($1500)</h2>
+              <p>Second installment of $1500 must be completed by July 25th, 2027 (refundable until July 1st, 2027 (Less $50 administrative fee).</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/28EbJ12Ro0qJers1OAfAc0n" target="_blank" rel="noopener noreferrer">Second installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Third Installment ($1550)</h2>
+              <p>There is also the option to pay in full (refundable until July 1st, 2027 (Less $50 administrative fee.)</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/28E28r9fMflDabcctefAc0s" target="_blank" rel="noopener noreferrer">Third Installment</a>
+            </div>
+          </div>
+        </div>
+        ` : ''}
+
+        ${showRetreat ? `
+        <!-- Section 4: Mother's Retreat 2027 (83ae382) -->
+        <div class="events-split-row" style="margin-bottom: 0;">
+          <div class="events-flyer-col">
+            <img
+              src="https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg"
+              alt="Mother's Retreat 2027"
+              style="cursor:zoom-in;"
+              onclick="openLightbox(this.src, 'Mother’s Retreat 2027')"
+              onerror="handleImgError(this, 'Mothers Retreat 2027')"
+            />
+          </div>
+          <div class="events-installment-stack">
+            <div class="events-installment-card">
+              <h2>Registration $100</h2>
+              <p>$100 registration required by March 30th, 2027</p>
+              <a class="btn-amber" href="https://buy.stripe.com/cNi3cv3Vsb5n4QS1OAfAc0t" target="_blank" rel="noopener noreferrer">Registration</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Second installment ($490)</h2>
+              <p>Second installment of $490 must be completed by July 25th, 2027 (refundable until July 1st, 2027 (Less $50 administrative fee).</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/6oUbJ1fEa1uN4QS50MfAc0u" target="_blank" rel="noopener noreferrer">Second installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <h2>Full Payment ($500)</h2>
+              <p>There is also the option to pay in full (refundable until July 1st, 2027 (Less $50 administrative fee.)</p>
+              <a class="btn-sky-blue" href="https://buy.stripe.com/cNi14n77E1uNfvw8cYfAc0v" target="_blank" rel="noopener noreferrer">Full Installment</a>
+            </div>
+
+            <div class="events-installment-card">
+              <p>To help us better prepare for our upcoming pilgrimage, Please click on the link below to complete the form. The information you provide will help us plan more effectively and ensure that we are prepared to meet everyone’s needs .”</p>
+              <a class="btn-amber" href="https://docs.google.com/forms/d/e/1FAIpQLScxSrYZeccpLGgPar1Yo3-VuD-K0eQDTdecQxhM6z8SCzfymg/viewform?usp=sharing&ouid=113846059753696108974" target="_blank" rel="noopener noreferrer">Registration Form</a>
+            </div>
+          </div>
+        </div>
+        ` : ''}
+
+        ${renderDestinationsExplorer()}
+        ${renderChecklistSection()}
+        ${renderFaqSection()}
+
       </div>
     </section>
   `;
@@ -840,11 +1811,11 @@ function renderGalleryPage() {
       <div class="container">
         <span class="section-tag">PHOTOGRAPHIC ARCHIVE</span>
         <h1 style="margin-bottom:16px;">Past Events</h1>
-        <p style="max-width:720px; margin-bottom:44px;">A look back at completed pilgrimages and group retreats, with photographs of landmarks, shared meals, and the landscapes travelers saw along the way.</p>
+        <p style="max-width:720px; margin-bottom:44px;">A look back at completed pilgrimages and group retreats, with photographs of landmarks, shared meals, and the landscapes travelers saw along the way. Click any photo to view fullscreen.</p>
 
         <div class="gallery-grid">
           ${GALLERY_ARCHIVE.map(item => `
-            <div class="gallery-card">
+            <div class="gallery-card" onclick="openLightbox('${item.image}', '${item.title.replace(/'/g, "\\'")} — ${item.location}')">
               <img src="${item.image}" alt="${item.title}" onerror="handleImgError(this, '${item.title}')">
               <div class="gallery-card-caption">
                 <div style="font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--slate-text); margin-bottom:4px;">${item.location}</div>
@@ -864,46 +1835,93 @@ function setShopView(view) {
 }
 window.setShopView = setShopView;
 
+function setShopCategory(cat) {
+  state.shopCategory = cat;
+  renderApp();
+}
+window.setShopCategory = setShopCategory;
+
+function setShopSearch(val) {
+  state.shopSearch = val;
+  const gridEl = document.getElementById('shop-products-grid');
+  const countEl = document.getElementById('shop-products-count');
+  if (!gridEl) return;
+  const filtered = getFilteredProducts();
+  if (countEl) countEl.textContent = `Showing ${filtered.length} of ${PRODUCTS.length} products`;
+  gridEl.innerHTML = renderProductCardsHTML(filtered);
+}
+window.setShopSearch = setShopSearch;
+
+function getFilteredProducts() {
+  return PRODUCTS.filter(p => {
+    const matchCat = state.shopCategory === 'All' || p.category === state.shopCategory;
+    const q = (state.shopSearch || '').trim().toLowerCase();
+    const matchSearch = !q || p.name.toLowerCase().includes(q) || p.subtitle.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+}
+
+function renderProductCardsHTML(list) {
+  if (list.length === 0) {
+    return `<div style="grid-column:1/-1; text-align:center; padding:48px 20px; color:var(--slate-text);">No products matched your filter. <button class="btn btn-outline-navy btn-sm" style="margin-left:10px;" onclick="state.shopCategory='All'; state.shopSearch=''; renderApp();">Reset Filters</button></div>`;
+  }
+  return list.map(p => `
+    <article class="product-card">
+      <div class="product-img-wrap" onclick="navigate('/item/${p.slug}')">
+        <img src="${p.image}" alt="${p.name}" onerror="handleImgError(this, '${p.name}')">
+      </div>
+      <div class="product-card-body">
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-accent); font-weight:700; margin-bottom:4px;">${p.category}</div>
+        <div class="product-title" onclick="navigate('/item/${p.slug}')">${p.name}</div>
+        <div class="product-sub">${p.subtitle}</div>
+        <div class="product-price">$${p.price.toFixed(2)}</div>
+        <div class="product-actions">
+          <button class="btn btn-navy btn-sm" style="flex:1;" onclick="addToCart('${p.slug}', 1, true)">Buy Now</button>
+          <button class="btn btn-outline-navy btn-sm" style="flex:1;" onclick="addToCart('${p.slug}', 1, false)">Add To Cart</button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
 function renderProductPage() {
+  const categories = ['All', 'Soaps', 'Balms & Salves', 'Oils & Body Care', 'Devotional Keepsakes'];
+  const filtered = getFilteredProducts();
   return `
     <section class="subpage-hero">
       <div class="container">
-        <div class="featured-store-split" style="margin-bottom:64px;">
+        <div class="featured-store-split" style="margin-bottom:56px;">
           <div class="featured-store-image">
             <img src="https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg" alt="Natural Care for a Better You" onerror="handleImgError(this, 'ATM Travels Store')">
           </div>
           <div class="featured-store-text">
-            <span class="section-tag">HANDCRAFTED WELLNESS & DEVOTIONAL STORE</span>
+            <span class="section-tag">HANDCRAFTED WELLNESS &amp; DEVOTIONAL STORE</span>
             <h1 style="font-size:clamp(32px, 4vw, 48px); margin-bottom:18px;">Explore Our Featured Products</h1>
             <p>Discover our handcrafted collection of botanical oils, nourishing balms, soothing soaps, and wellness products made with thoughtfully selected ingredients. Each product is created to support your daily self-care routine with warmth, intention, and natural beauty.</p>
           </div>
         </div>
 
+        <div class="filter-bar">
+          <div class="filter-pills">
+            ${categories.map(cat => `
+              <button type="button" class="filter-pill ${state.shopCategory === cat ? 'active' : ''}" onclick="setShopCategory('${cat}')">${cat}</button>
+            `).join('')}
+          </div>
+          <div class="search-input-wrap">
+            <input type="search" placeholder="Search balms, oils, soaps..." value="${state.shopSearch}" oninput="setShopSearch(this.value)" aria-label="Search store products" />
+          </div>
+        </div>
+
         <div class="shop-toolbar">
-          <div style="font-weight:500; color:var(--navy-dark);">Showing all ${PRODUCTS.length} products</div>
+          <div id="shop-products-count" style="font-weight:500; color:var(--navy-dark);">Showing ${filtered.length} of ${PRODUCTS.length} products</div>
           <div class="view-toggle-group">
             <button class="icon-btn ${state.shopView === 'grid' ? 'active' : ''}" onclick="setShopView('grid')">Grid View</button>
             <button class="icon-btn ${state.shopView === 'list' ? 'active' : ''}" onclick="setShopView('list')">List View</button>
           </div>
         </div>
 
-        <div class="products-grid ${state.shopView === 'list' ? 'list-view' : ''}">
-          ${PRODUCTS.map(p => `
-            <article class="product-card">
-              <div class="product-img-wrap" onclick="navigate('/item/${p.slug}')">
-                <img src="${p.image}" alt="${p.name}" onerror="handleImgError(this, '${p.name}')">
-              </div>
-              <div class="product-card-body">
-                <div class="product-title" onclick="navigate('/item/${p.slug}')">${p.name}</div>
-                <div class="product-sub">${p.subtitle}</div>
-                <div class="product-price">$${p.price.toFixed(2)}</div>
-                <div class="product-actions">
-                  <button class="btn btn-navy btn-sm" style="flex:1;" onclick="addToCart('${p.slug}', 1, true)">Buy Now</button>
-                  <button class="btn btn-outline-navy btn-sm" style="flex:1;" onclick="addToCart('${p.slug}', 1, false)">Add To Cart</button>
-                </div>
-              </div>
-            </article>
-          `).join('')}
+        <div id="shop-products-grid" class="products-grid ${state.shopView === 'list' ? 'list-view' : ''}">
+          ${renderProductCardsHTML(filtered)}
         </div>
       </div>
     </section>
@@ -928,7 +1946,7 @@ function renderSingleProductPage(slug) {
         </div>
         <div class="single-product-layout">
           <div>
-            <img src="${product.image}" alt="${product.name}" style="width:100%; max-height:520px; object-fit:cover; border-radius:12px;" onerror="handleImgError(this, '${product.name}')">
+            <img src="${product.image}" alt="${product.name}" style="width:100%; max-height:520px; object-fit:cover; border-radius:12px; cursor:zoom-in;" onclick="openLightbox(this.src, '${product.name.replace(/'/g, "\\'")}')" onerror="handleImgError(this, '${product.name}')">
           </div>
           <div>
             <span class="stock-badge">${product.stock}</span>
@@ -974,14 +1992,17 @@ function renderBlogPage() {
         <div class="cards-grid-3">
           ${BLOG_POSTS.map(post => `
             <article class="event-card">
-              <div class="event-card-img-wrap" style="aspect-ratio:16/10;">
+              <div class="event-card-img-wrap" style="aspect-ratio:16/10; cursor:pointer;" onclick="openBlogModal('${post.id}')">
                 <img src="${post.image}" alt="${post.title}" onerror="handleImgError(this, '${post.title}')">
               </div>
               <div class="event-card-body">
                 <div class="event-card-tag">${post.category} · ${post.date}</div>
-                <h3 style="font-size:20px; margin-bottom:12px;">${post.title}</h3>
+                <h3 style="font-size:20px; margin-bottom:12px; cursor:pointer;" onclick="openBlogModal('${post.id}')">${post.title}</h3>
                 <p style="font-size:14.5px; margin-bottom:20px; flex-grow:1;">${post.excerpt}</p>
-                <a href="#/events-and-pilgrimages" class="btn btn-outline-navy btn-sm">Explore Pilgrimages</a>
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <button type="button" class="btn btn-navy btn-sm" onclick="openBlogModal('${post.id}')">Read Full Article</button>
+                  <a href="#/events-and-pilgrimages" class="btn btn-outline-navy btn-sm">Explore Pilgrimages</a>
+                </div>
               </div>
             </article>
           `).join('')}
@@ -993,8 +2014,33 @@ function renderBlogPage() {
 
 function handleContactSubmit(e) {
   e.preventDefault();
-  e.target.reset();
-  showToast('Message sent! Our team in Dacula, Georgia will reply shortly.');
+  const form = e.target;
+  const inputs = Array.from(form.querySelectorAll('input, textarea')).map(el => el.value.trim()).filter(Boolean);
+  const summaryText = `Hello ATM Travels! New Contact Inquiry:\n${inputs.join(' | ')}`;
+  const waUrl = `https://wa.me/14045907020?text=${encodeURIComponent(summaryText)}`;
+  const mailUrl = `mailto:info@atm-travels.org?subject=${encodeURIComponent('ATM Travels Website Inquiry')}&body=${encodeURIComponent(summaryText)}`;
+
+  form.reset();
+  const modal = document.getElementById('registration-modal');
+  const backdrop = document.getElementById('drawer-backdrop');
+  if (modal && backdrop) {
+    modal.innerHTML = `
+      <div style="text-align:center; padding: 12px 6px;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#dcfce7; color:#15803d; display:inline-flex; align-items:center; justify-content:center; font-size:26px; font-weight:700; margin-bottom:14px;">✓</div>
+        <span class="section-tag" style="margin-bottom:4px;">MESSAGE READY</span>
+        <h3 style="font-size:22px; margin-bottom:10px;">Message Recorded!</h3>
+        <p style="font-size:14.5px; color:var(--slate-text); margin-bottom:20px;">To reach our team in Dacula, Georgia immediately, choose how you would like to deliver your message:</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-block" onclick="closeModal()">Send via WhatsApp (+1-404-590-7020)</a>
+          <a href="${mailUrl}" class="btn btn-outline-navy btn-block" onclick="closeModal()">Open in Email (info@atm-travels.org)</a>
+          <button type="button" class="btn btn-sm" style="background:none; color:var(--slate-text);" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    `;
+    modal.classList.add('open');
+    backdrop.classList.add('open');
+  }
+  showToast('Message recorded! Choose WhatsApp or Email for instant delivery.');
 }
 window.handleContactSubmit = handleContactSubmit;
 
@@ -1054,6 +2100,7 @@ function renderContactPage() {
             </form>
           </div>
         </div>
+        ${renderFaqSection()}
       </div>
     </section>
   `;
@@ -1085,17 +2132,24 @@ function handleReviewSubmit(e) {
   const parts = name.split(/\s+/);
   const initials = (parts[0]?.[0] || 'A') + (parts[1]?.[0] || parts[0]?.[1] || 'T');
 
-  state.reviews.unshift({
+  const newReview = {
     id: Date.now(),
     title,
-    date: 'November 11, 2026',
+    date: 'November 2026',
     rating: state.selectedRating,
     text,
     initials: initials.toUpperCase(),
     author: name,
     email,
     avatarClass: 'avatar-gold'
-  });
+  };
+
+  state.reviews.unshift(newReview);
+  try {
+    const existingCustom = JSON.parse(localStorage.getItem('atm_reviews_v1') || '[]');
+    existingCustom.unshift(newReview);
+    localStorage.setItem('atm_reviews_v1', JSON.stringify(existingCustom));
+  } catch (err) {}
 
   renderApp();
   showToast('Thank you! Your review has been published.');
@@ -1189,6 +2243,51 @@ function updateActiveNavLinks() {
   });
 }
 
+function initScrollReveal() {
+  const els = document.querySelectorAll('.reveal-on-scroll, .event-card, .review-card, .product-card, .about-content-card, .events-split-row');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    obs.observe(el);
+  });
+}
+
+function updateCountdownTimer() {
+  const dEl = document.getElementById('cd-days');
+  const hEl = document.getElementById('cd-hours');
+  const mEl = document.getElementById('cd-mins');
+  const sEl = document.getElementById('cd-secs');
+  if (!dEl || !hEl || !mEl || !sEl) return;
+
+  // Next milestone deadline (Dec 30, 2026 or May 17, 2027 if past Dec 30, 2026)
+  const now = new Date();
+  let target = new Date('2026-12-30T23:59:59');
+  if (now >= target) {
+    target = new Date('2027-05-17T23:59:59');
+  }
+  const diff = Math.max(0, target - now);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
+  const secs = Math.floor((diff / 1000) % 60);
+
+  dEl.textContent = String(days).padStart(2, '0');
+  hEl.textContent = String(hours).padStart(2, '0');
+  mEl.textContent = String(mins).padStart(2, '0');
+  sEl.textContent = String(secs).padStart(2, '0');
+}
+
 function renderApp() {
   const mainEl = document.getElementById('app-main');
   if (!mainEl) return;
@@ -1218,10 +2317,13 @@ function renderApp() {
   }
 
   updateActiveNavLinks();
+  updateCountdownTimer();
+  requestAnimationFrame(initScrollReveal);
 }
 
 window.addEventListener('hashchange', parseRoute);
 window.addEventListener('DOMContentLoaded', () => {
   parseRoute();
   updateCartUI();
+  setInterval(updateCountdownTimer, 1000);
 });

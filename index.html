@@ -168,8 +168,36 @@
     </div>
   </aside>
 
-  <!-- Pilgrimage Registration Modal -->
+  <!-- Pilgrimage Registration & Ministry Modal -->
   <div id="registration-modal" class="modal-container" role="dialog" aria-modal="true"></div>
+
+  <!-- Fullscreen Photo & Flyer Lightbox -->
+  <div id="lightbox-overlay" class="lightbox-overlay" onclick="closeLightbox(event)" role="dialog" aria-modal="true" aria-label="Image Viewer">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close Image Viewer">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <!-- Floating Prayer & Pilgrimage Quick Helper -->
+  <div id="floating-widget" class="floating-widget">
+    <div id="floating-panel" class="floating-panel" role="region" aria-label="ATM Travels Quick Helper">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span class="section-tag" style="margin:0; font-size:11px;">ATM PRAYER &amp; PILGRIMAGE HUB</span>
+        <button onclick="toggleFloatingHelper(false)" style="background:none; border:none; font-size:20px; cursor:pointer; color:var(--slate-text);">&times;</button>
+      </div>
+      <h4 style="font-size:16px; color:var(--navy-dark); margin-bottom:8px;">How can we walk with your family today?</h4>
+      <p style="font-size:13px; color:var(--slate-text); margin-bottom:14px;">Join our nightly 8:00 PM Flame of Love Rosary on Zoom, request a Traveling Statue, or plan your 2027 pilgrimage.</p>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button class="btn btn-navy btn-sm btn-block" onclick="toggleFloatingHelper(false); openMinistryModal('Daily Rosary — 8:00 PM Zoom')">Join 8:00 PM Zoom Rosary</button>
+        <button class="btn btn-outline-navy btn-sm btn-block" onclick="toggleFloatingHelper(false); openStatueModal('Your Region')">Host Our Lady (Traveling Statue)</button>
+        <a href="#/events-and-pilgrimages" class="btn btn-outline-navy btn-sm btn-block" onclick="toggleFloatingHelper(false)">2027 Pilgrimage Calculator</a>
+      </div>
+    </div>
+    <button class="floating-trigger-btn" onclick="toggleFloatingHelper()" aria-label="Open Prayer and Pilgrimage Hub">
+      <span style="color:var(--gold-soft);">✦</span>
+      <span>Prayer &amp; Pilgrimage Hub</span>
+    </button>
+  </div>
 
   <!-- Toast Notification -->
   <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>
