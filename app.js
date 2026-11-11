@@ -538,6 +538,8 @@ window.navigate = navigate;
 function parseRoute() {
   const hash = window.location.hash.replace(/^#/, '') || '/';
   state.route = hash;
+  const nav = document.getElementById('main-nav');
+  if (nav) nav.classList.remove('mobile-open');
   renderApp();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -627,13 +629,99 @@ function handleCheckoutSubmit() {
     showToast('Your cart is empty. Add a product first!');
     return;
   }
+  const drawer = document.getElementById('cart-drawer');
+  if (drawer) drawer.classList.remove('open');
+
+  const modal = document.getElementById('registration-modal');
+  const backdrop = document.getElementById('drawer-backdrop');
+  if (!modal || !backdrop) return;
+
+  const subtotal = state.cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+  const itemsListHtml = state.cart.map(i => `
+    <div style="display:flex; justify-content:space-between; font-size:13.5px; padding:4px 0; border-bottom:1px dashed var(--border-gray);">
+      <span>${i.qty} × ${i.name}</span>
+      <strong>$${(i.price * i.qty).toFixed(2)}</strong>
+    </div>
+  `).join('');
+
+  modal.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; margin-bottom:14px;">
+      <div>
+        <span class="section-tag" style="margin-bottom:4px;">ATM TRAVELS HANDCRAFTED STORE</span>
+        <h3 style="font-size:22px;">Shipping &amp; Instant Order Checkout</h3>
+      </div>
+      <button onclick="closeModal()" style="background:none; border:none; font-size:24px; cursor:pointer; color:var(--slate-text);">&times;</button>
+    </div>
+    <div style="background:var(--cream-bg); border:1px solid var(--border-gray); border-radius:10px; padding:12px 16px; margin-bottom:16px;">
+      ${itemsListHtml}
+      <div style="display:flex; justify-content:space-between; font-size:15px; font-weight:700; color:var(--navy-dark); padding-top:8px;">
+        <span>Order Total</span>
+        <span>$${subtotal.toFixed(2)}</span>
+      </div>
+    </div>
+    <form onsubmit="completeStoreCheckout(event)">
+      <div class="form-group">
+        <label class="form-label">Customer Full Name *</label>
+        <input id="checkout-name" type="text" class="form-control" placeholder="Full name" required>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input id="checkout-email" type="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number *</label>
+          <input id="checkout-phone" type="tel" class="form-control" placeholder="+1 (404) 000-0000" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Shipping Street Address, City, State &amp; ZIP *</label>
+        <textarea id="checkout-address" class="form-control" style="min-height:68px;" placeholder="Enter full shipping address..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-navy btn-block">Place Order ($${subtotal.toFixed(2)})</button>
+    </form>
+  `;
+  modal.classList.add('open');
+  backdrop.classList.add('open');
+}
+window.handleCheckoutSubmit = handleCheckoutSubmit;
+
+function completeStoreCheckout(e) {
+  e.preventDefault();
+  const name = document.getElementById('checkout-name').value.trim();
+  const email = document.getElementById('checkout-email').value.trim();
+  const phone = document.getElementById('checkout-phone').value.trim();
+  const address = document.getElementById('checkout-address').value.trim();
+  const subtotal = state.cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+  const itemsText = state.cart.map(i => `${i.qty}x ${i.name} ($${(i.price * i.qty).toFixed(2)})`).join(', ');
+
+  const summaryText = `Hello ATM Travels! New Store Order ($${subtotal.toFixed(2)}):\nItems: ${itemsText}\nCustomer: ${name} (${email}, ${phone})\nShip To: ${address}`;
+  const waUrl = `https://wa.me/14045907020?text=${encodeURIComponent(summaryText)}`;
+  const mailUrl = `mailto:info@atm-travels.org?subject=${encodeURIComponent('New ATM Store Order - ' + name)}&body=${encodeURIComponent(summaryText)}`;
+
   state.cart = [];
   savePersistedCart(state.cart);
   updateCartUI();
-  toggleCartDrawer(false);
-  showToast('Thank you! Your order has been received by ATM Travels.');
+
+  const modal = document.getElementById('registration-modal');
+  if (modal) {
+    modal.innerHTML = `
+      <div style="text-align:center; padding: 12px 6px;">
+        <div style="width:52px; height:52px; border-radius:50%; background:#dcfce7; color:#15803d; display:inline-flex; align-items:center; justify-content:center; font-size:26px; font-weight:700; margin-bottom:14px;">✓</div>
+        <span class="section-tag" style="margin-bottom:4px;">ORDER CONFIRMED</span>
+        <h3 style="font-size:22px; margin-bottom:10px;">Thank You for Your Order, ${name}!</h3>
+        <p style="font-size:14.5px; color:var(--slate-text); margin-bottom:18px;">Your handcrafted botanical order (<strong>$${subtotal.toFixed(2)}</strong>) is ready. Send your itemized order invoice to our Dacula, GA fulfillment team via WhatsApp or Email below:</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-navy btn-block" onclick="closeModal()">Send Order Invoice via WhatsApp (+1-404-590-7020)</a>
+          <a href="${mailUrl}" class="btn btn-outline-navy btn-block" onclick="closeModal()">Send Order Invoice via Email (info@atm-travels.org)</a>
+          <button type="button" class="btn btn-sm" style="background:none; color:var(--slate-text);" onclick="closeModal()">Done</button>
+        </div>
+      </div>
+    `;
+  }
+  showToast('Thank you! Your order has been recorded by ATM Travels.');
 }
-window.handleCheckoutSubmit = handleCheckoutSubmit;
+window.completeStoreCheckout = completeStoreCheckout;
 
 // Lightbox Viewer for Flyers & Past Event Photos
 function openLightbox(src, caption) {
@@ -1651,11 +1739,23 @@ function renderEventsPage() {
 
         ${showFamily ? `
         <!-- Section 1: Pilgrimage to Italy (17eb8491) -->
+        <div class="trip-section-header">
+          <div>
+            <span class="trip-badge-num">Journey 01 · Family &amp; Saints Pilgrimage</span>
+            <h2 style="font-size:24px; margin:0;">Pilgrimage to Italy — “Walk with the Saints”</h2>
+          </div>
+          <div class="trip-meta-pills">
+            <span class="trip-meta-pill">📍 Rome · Assisi · San Giovanni Rotondo</span>
+            <span class="trip-meta-pill">💳 Deposit Due: Dec 30, 2026</span>
+          </div>
+        </div>
         <div class="events-split-row">
           <div class="events-flyer-col">
             <img
               src="https://atm-travels.org/wp-content/uploads/2026/11/Gemini_Generated_Image_kia46pkia46pkia4-768x1095.jpg"
               alt="Pilgrimage ATM travels"
+              loading="lazy"
+              decoding="async"
               style="cursor:zoom-in;"
               onclick="openLightbox(this.src, 'Pilgrimage to Italy — Walk with the Saints')"
               onerror="handleImgError(this, 'Pilgrimage to Italy')"
@@ -1676,7 +1776,7 @@ function renderEventsPage() {
 
             <div class="events-installment-card">
               <h2>Single Room second installment ($1910)</h2>
-              <p>The remaining balance of $975 for single room must be paid on or before May 17th, 2027.</p>
+              <p>The remaining balance for single room occupancy must be paid on or before May 17th, 2027.</p>
               <a class="btn-sky-blue" href="https://buy.stripe.com/cNi3cveA6c9r6Z0fFqfAc0h" target="_blank" rel="noopener noreferrer">Full Installment</a>
             </div>
 
@@ -1688,11 +1788,23 @@ function renderEventsPage() {
         </div>
 
         <!-- Section 2: Children and Family Pilgrimage to Italy, Croatia & Medjugorje (76c84df1) -->
+        <div class="trip-section-header">
+          <div>
+            <span class="trip-badge-num">Journey 02 · Marian &amp; Family Pilgrimage</span>
+            <h2 style="font-size:24px; margin:0;">Children &amp; Family Pilgrimage to Medjugorje</h2>
+          </div>
+          <div class="trip-meta-pills">
+            <span class="trip-meta-pill">📍 Medjugorje · Apparition Hill · St. James</span>
+            <span class="trip-meta-pill">💳 Deposit Due: Jan 31, 2027</span>
+          </div>
+        </div>
         <div class="events-split-row">
           <div class="events-flyer-col">
             <img
               src="https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg"
               alt="Children and Family Pilgrimage to Italy, Croatia and Medjugorje"
+              loading="lazy"
+              decoding="async"
               style="cursor:zoom-in;"
               onclick="openLightbox(this.src, 'Children and Family Pilgrimage to Italy, Croatia and Medjugorje')"
               onerror="handleImgError(this, 'Italy, Croatia & Medjugorje')"
@@ -1725,11 +1837,23 @@ function renderEventsPage() {
         </div>
 
         <!-- Section 3: Combined Pilgrimage (32a55dcc) -->
+        <div class="trip-section-header">
+          <div>
+            <span class="trip-badge-num">Journey 03 · Combined European Pilgrimage</span>
+            <h2 style="font-size:24px; margin:0;">Combined Pilgrimage (Italy, Croatia &amp; Medjugorje)</h2>
+          </div>
+          <div class="trip-meta-pills">
+            <span class="trip-meta-pill">📍 Italy · Croatia · Medjugorje</span>
+            <span class="trip-meta-pill">💳 Deposit Due: Mar 30, 2027</span>
+          </div>
+        </div>
         <div class="events-split-row">
           <div class="events-flyer-col">
             <img
               src="https://atm-travels.org/wp-content/uploads/2026/11/combine-pilgaimage-2-copy-2-768x1086.jpg"
               alt="Combined Pilgrimage"
+              loading="lazy"
+              decoding="async"
               style="cursor:zoom-in;"
               onclick="openLightbox(this.src, 'Combined Pilgrimage 2027')"
               onerror="handleImgError(this, 'Combined Pilgrimage')"
@@ -1753,17 +1877,34 @@ function renderEventsPage() {
               <p>There is also the option to pay in full (refundable until July 1st, 2027 (Less $50 administrative fee.)</p>
               <a class="btn-sky-blue" href="https://buy.stripe.com/28E28r9fMflDabcctefAc0s" target="_blank" rel="noopener noreferrer">Third Installment</a>
             </div>
+
+            <div class="events-installment-card">
+              <p>To help us better prepare for our upcoming pilgrimage, Please click on the link below to complete the form. The information you provide will help us plan more effectively and ensure that we are prepared to meet everyone’s needs .”</p>
+              <a class="btn-amber" href="https://docs.google.com/forms/d/e/1FAIpQLSdLBO75DbFl0sI2LKsL_jZlua3TywtCiUieTofkY5o5VDM35A/viewform?usp=sharing&ouid=113846059753696108974" target="_blank" rel="noopener noreferrer">Registration Form</a>
+            </div>
           </div>
         </div>
         ` : ''}
 
         ${showRetreat ? `
         <!-- Section 4: Mother's Retreat 2027 (83ae382) -->
+        <div class="trip-section-header">
+          <div>
+            <span class="trip-badge-num">Journey 04 · Annual Mothers Spiritual Retreat</span>
+            <h2 style="font-size:24px; margin:0;">Mother’s Retreat 2027 — “She is Our Mother”</h2>
+          </div>
+          <div class="trip-meta-pills">
+            <span class="trip-meta-pill">📍 Rosa Mystica House of Prayer, NY</span>
+            <span class="trip-meta-pill">💳 Deposit Due: Mar 30, 2027</span>
+          </div>
+        </div>
         <div class="events-split-row" style="margin-bottom: 0;">
           <div class="events-flyer-col">
             <img
               src="https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg"
               alt="Mother's Retreat 2027"
+              loading="lazy"
+              decoding="async"
               style="cursor:zoom-in;"
               onclick="openLightbox(this.src, 'Mother’s Retreat 2027')"
               onerror="handleImgError(this, 'Mothers Retreat 2027')"
