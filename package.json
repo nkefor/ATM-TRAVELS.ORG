@@ -1,0 +1,9 @@
+{
+  "name": "atm-travels-clone",
+  "version": "1.0.0",
+  "description": "Full clone of ATM Travels (atm-travels.org) — April-Marie's Traveling Mary",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "python -m http.server 3000"
+  }
+}
