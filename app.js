@@ -1152,9 +1152,9 @@ function renderHomePage() {
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <span class="section-tag light">WELCOME</span>
+        <span class="section-tag light" style="font-size:15px; letter-spacing:0.1em; margin-bottom:14px;">Leading all to Christ through Mary And the Pure Prayers of Children</span>
         <h1>April-Marie’s Traveling Mary</h1>
-        <p class="hero-subtitle">a family-owned Catholic organization dedicated to fostering spiritual growth through pilgrimages.</p>
+        <p class="hero-subtitle">a family-owned Catholic organization dedicated to fostering spiritual growth through pilgrimages, retreats, and family prayer.</p>
         <div class="hero-cta-group">
           <a href="#/events-and-pilgrimages" class="btn btn-white">Explore Pilgrimages</a>
           <a href="#/events-and-pilgrimages" class="btn btn-outline-white">View Events</a>
