@@ -39,7 +39,7 @@ const UPCOMING_EVENTS = [
     tiers: [
       { label: 'Registration Deposit (Due by Jan 31, 2027)', price: 500 },
       { label: 'Double Room Second Installment ($899 + $40.87 Fees — Due by May 17, 2027)', price: 939.87 },
-      { label: 'Single Room Second Installment (Due by May 17, 2027)', price: 1050 }
+      { label: 'Single Room Second Installment ($1050 + $45.25 Fees — Due by May 17, 2027)', price: 1095.25 }
     ]
   },
   {
@@ -2131,7 +2131,7 @@ const CALCULATOR_PLANS = {
     deposit: 500,
     depositDue: 'Jan 31, 2027',
     doubleBalance: 939.87,
-    singleBalance: 1050,
+    singleBalance: 1095.25,
     balanceDue: 'May 17, 2027',
     stripeDepositUrl: 'https://buy.stripe.com/fZubJ1fEaehzbfgdxifAc0j'
   },
@@ -2396,8 +2396,8 @@ function renderEventsPage() {
             </div>
 
             <div class="events-installment-card">
-              <h2>Single Room second installment ($975)</h2>
-              <p>The remaining balance for single room must be paid on or before May 17th, 2027.</p>
+              <h2>Single Room second installment ($1050 + $45.25 Fees) ($1095.25)</h2>
+              <p>The remaining balance of $1,050 + $45.25 fees ($1,095.25 total) for single room must be paid on or before May 17th, 2027.</p>
               <a class="btn-sky-blue" href="https://buy.stripe.com/5kQ4gz63AflDgzActefAc0q" target="_blank" rel="noopener noreferrer">Single Room second installment</a>
             </div>
 
