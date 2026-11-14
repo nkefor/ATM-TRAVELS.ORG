@@ -19,7 +19,7 @@ const UPCOMING_EVENTS = [
     tag: 'Full Package · 2027',
     roman: 'MMXXVII',
     title: 'Children and Family Pilgrimage to Italy, Croatia and Medjugorje',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg',
+    image: 'combined-pilgrimage-2027.jpg',
     subtitle: 'A Journey of Faith, Saints & Sacred Places — "Walk with the Saints. Grow in Faith. Be Transformed."',
     priceBadge: 'From $1,910 / person · $500 Deposit',
     tiers: [
@@ -33,13 +33,13 @@ const UPCOMING_EVENTS = [
     tag: 'Marian Shrine Journey · 2027',
     roman: 'MMXXVII',
     title: 'Children and Family Pilgrimage to Medjugorje',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/Gemini_Generated_Image_kia46pkia46pkia4-768x1095.jpg',
-    subtitle: 'Double room: $1,350 + $39.45 fees · Single room: $1,475 + $43.08 fees',
-    priceBadge: 'From $1,350 / person · $500 Deposit',
+    image: 'medjugorje-pilgrimage-2027.jpg',
+    subtitle: 'Double room: $1,399 + $40.87 fees · Single room: $1,550 + $45.25 fees',
+    priceBadge: 'From $1,399 / person · $500 Deposit',
     tiers: [
       { label: 'Registration Deposit (Due by Jan 31, 2027)', price: 500 },
-      { label: 'Double Room Second Installment (Due by May 17, 2027)', price: 850 },
-      { label: 'Single Room Second Installment (Due by May 17, 2027)', price: 975 }
+      { label: 'Double Room Second Installment (Due by May 17, 2027)', price: 899 },
+      { label: 'Single Room Second Installment (Due by May 17, 2027)', price: 1050 }
     ]
   },
   {
@@ -61,9 +61,9 @@ const UPCOMING_EVENTS = [
     tag: 'Combined European Pilgrimage · 2027',
     roman: 'MMXXVII',
     title: 'Combined Pilgrimage (Italy, Croatia & Medjugorje)',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/combine-pilgaimage-2-copy-2-768x1086.jpg',
-    subtitle: 'Experience the full grace of Rome, Assisi, Croatia, and Medjugorje in one seamless family journey.',
-    priceBadge: '$500 Deposit Due by Mar 30, 2027',
+    image: 'combined-pilgrimage-2027.jpg',
+    subtitle: 'Experience the full grace of Rome, Assisi, Croatia, and Medjugorje in one seamless family journey (June 18 – July 8, 2027).',
+    priceBadge: '$500 Deposit · $3,550 + $103.25 Fees',
     tiers: [
       { label: 'Registration Deposit (Due by March 30, 2027)', price: 500 },
       { label: 'Second Installment (Due by July 25, 2027)', price: 1500 },
@@ -2359,7 +2359,7 @@ function renderEventsPage() {
           </div>
         </div>
 
-        <!-- Section 2: Children and Family Pilgrimage to Italy, Croatia & Medjugorje -->
+        <!-- Section 2: Children and Family Pilgrimage to Medjugorje -->
         <div class="trip-section-header">
           <div>
             <span class="trip-badge-num">Journey 02 · Marian &amp; Family Pilgrimage</span>
@@ -2373,31 +2373,31 @@ function renderEventsPage() {
         <div class="events-split-row">
           <div class="events-flyer-col">
             <img
-              src="https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg"
-              alt="Children and Family Pilgrimage to Italy, Croatia and Medjugorje"
+              src="medjugorje-pilgrimage-2027.jpg"
+              alt="Children and Family Pilgrimage to Medjugorje"
               loading="lazy"
               decoding="async"
               style="cursor:zoom-in;"
-              onclick="openLightbox(this.src, 'Children and Family Pilgrimage to Italy, Croatia and Medjugorje')"
-              onerror="handleImgError(this, 'Italy, Croatia & Medjugorje')"
+              onclick="openLightbox(this.src, 'Children and Family Pilgrimage to Medjugorje')"
+              onerror="handleImgError(this, 'Children and Family Pilgrimage to Medjugorje')"
             />
           </div>
           <div class="events-installment-stack">
             <div class="events-installment-card">
               <h2>Registration $500</h2>
-              <p>A nonrefundable deposit of $500 is required on or before January 31, 2027, to secure your spot on the pilgrimage. This payment will be credited as part of the total fee of $1350 + $39.45 fees for Double room and $1475 + $43.08 fees.</p>
+              <p>A nonrefundable deposit of $500 is required on or before January 31, 2027, to secure your spot on the pilgrimage. This payment will be credited as part of the total fee of $1,399 + $40.87 fees for Double room and $1,550 + $45.25 fees for Single room.</p>
               <a class="btn-amber" href="https://buy.stripe.com/fZubJ1fEaehzbfgdxifAc0j" target="_blank" rel="noopener noreferrer">Registration</a>
             </div>
 
             <div class="events-installment-card">
               <h2>Double Room Second Installment($850)</h2>
-              <p>The remaining balance of $850 for double room must be paid on or before May 17th, 2027.</p>
+              <p>The remaining balance for double room must be paid on or before May 17th, 2027.</p>
               <a class="btn-sky-blue" href="https://buy.stripe.com/eVq4gzajQddv8341OAfAc0r" target="_blank" rel="noopener noreferrer">Second installment</a>
             </div>
 
             <div class="events-installment-card">
               <h2>Single Room second installment ($975)</h2>
-              <p>The remaining balance of $975 for single room must be paid on or before May 17th, 2027.</p>
+              <p>The remaining balance for single room must be paid on or before May 17th, 2027.</p>
               <a class="btn-sky-blue" href="https://buy.stripe.com/5kQ4gz63AflDgzActefAc0q" target="_blank" rel="noopener noreferrer">Single Room second installment</a>
             </div>
 
@@ -2422,12 +2422,12 @@ function renderEventsPage() {
         <div class="events-split-row">
           <div class="events-flyer-col">
             <img
-              src="https://atm-travels.org/wp-content/uploads/2026/11/combine-pilgaimage-2-copy-2-768x1086.jpg"
-              alt="Combined Pilgrimage"
+              src="combined-pilgrimage-2027.jpg"
+              alt="Children and Family Pilgrimage to Italy, Croatia, and Medjugorje"
               loading="lazy"
               decoding="async"
               style="cursor:zoom-in;"
-              onclick="openLightbox(this.src, 'Combined Pilgrimage 2027')"
+              onclick="openLightbox(this.src, 'Children and Family Pilgrimage to Italy, Croatia, and Medjugorje')"
               onerror="handleImgError(this, 'Combined Pilgrimage')"
             />
           </div>
