@@ -47,7 +47,7 @@ const UPCOMING_EVENTS = [
     tag: 'Annual Mothers Retreat · 2027',
     roman: 'MMXXVII',
     title: 'Mother’s Retreat 2027 — “She is Our Mother”',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg?v=2',
     subtitle: 'A dedicated spiritual retreat at Rosa Mystica for mothers seeking prayerful renewal, fellowship, and peace.',
     priceBadge: 'From $500 Total · $100 Deposit',
     tiers: [
@@ -77,13 +77,13 @@ const PAST_EVENTS_LIST = [
     date: 'November 21–29, 2025',
     title: 'Pilgrimage to Medjugorje & Croatia',
     desc: 'Land-only pilgrimage flying into Split (SPU). Shared room $1,040.60 · private room $1,143.60 (fees included). Daily Mass, Apparition Hill, and family fellowship.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg?v=2'
   },
   {
     date: 'September 2025 / 2026',
     title: 'Mother’s Spiritual Retreat at Rosa Mystica (“She is Our Mother”)',
     desc: 'A weekend of Holy Mass, Adoration, Confession, 1-on-1 spiritual direction, veneration of sacred relics, and sisterhood around the bonfire in Edmeston, New York.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg?v=2'
   },
   {
     date: 'June 27–29, 2025',
@@ -95,7 +95,7 @@ const PAST_EVENTS_LIST = [
     date: 'April 5, 2025',
     title: 'Children’s Retreat: Spend a Day with Mary, Our Loving Mother',
     desc: 'A joyful day of prayer, saint teachings, crafts, and Eucharistic adoration helping young hearts grow closer to Jesus through Mary.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg?v=2'
   },
   {
     date: 'October 25 – November 27, 2024',
@@ -113,7 +113,7 @@ const PRODUCTS = [
     subtitle: 'Calendula & Pine Needle Soap · 5 oz',
     price: 5.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-10.42.58-PM.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-10.42.58-PM.jpeg?v=2',
     description: 'Nourish and cleanse your skin with this gentle, naturally inspired soap, thoughtfully made with natural and organic ingredients including Calendula & Pine Needle extract. Hand-molded with a Marian relief emblem to bring warmth, intention, and natural beauty to your daily routine.'
   },
   {
@@ -123,7 +123,7 @@ const PRODUCTS = [
     subtitle: 'Handcrafted Botanical Balm · 1 oz',
     price: 14.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-29-at-3.29.03-PM.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-29-at-3.29.03-PM.jpeg?v=2',
     description: 'Traditional aromatic botanical balm crafted with essential oils, beeswax, and soothing herbal infusions to comfort and protect skin naturally.'
   },
   {
@@ -133,7 +133,7 @@ const PRODUCTS = [
     subtitle: 'Nourishing Herbal Balm · 2 oz',
     price: 13.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-29-at-3.29.04-PM.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-29-at-3.29.04-PM.jpeg?v=2',
     description: 'Restorative herbal balm formulated in small batches with pure botanical extracts to soothe dry skin and support daily wellness.'
   },
   {
@@ -143,7 +143,7 @@ const PRODUCTS = [
     subtitle: 'Whipped Botanical Moisture · 8 oz',
     price: 24.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-12.35.08-AM.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-12.35.08-AM.jpeg?v=2',
     description: 'Rich, velvety body butter infused with golden calendula blossoms to deeply hydrate and soften skin all day.'
   },
   {
@@ -153,7 +153,7 @@ const PRODUCTS = [
     subtitle: 'Soothing Botanical Lip Balm',
     price: 2.00,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/g1.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/g1.jpeg?v=2',
     description: 'Gentle everyday lip repair balm made with calendula-infused oil and natural beeswax for soft, protected lips.'
   },
   {
@@ -163,7 +163,7 @@ const PRODUCTS = [
     subtitle: 'Pure Infused Botanical Oil · 7 oz',
     price: 19.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/a1.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/a1.jpeg?v=2',
     description: 'Slow-infused golden calendula oil crafted for skin nourishment, gentle massage, and daily holistic care.'
   },
   {
@@ -173,7 +173,7 @@ const PRODUCTS = [
     subtitle: 'Concentrated Soothing Salve · 2 oz',
     price: 14.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-29-at-3.37.08-PM.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-29-at-3.37.08-PM.jpeg?v=2',
     description: 'All-purpose calendula salve designed to calm dry, chapped, or sensitive skin with pure botanical care.'
   },
   {
@@ -183,7 +183,7 @@ const PRODUCTS = [
     subtitle: 'Aromatic Botanical Blend · 1 oz',
     price: 14.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/p3.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/p3.jpeg?v=2',
     description: 'Delicate blend of calendula infusion and uplifting geranium essential oil for calming therapeutic massage.'
   },
   {
@@ -193,7 +193,7 @@ const PRODUCTS = [
     subtitle: 'Pilgrimage Travel Edition · 1 oz',
     price: 9.99,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg?v=2',
     description: 'Compact travel-ready bottle of our signature Calendula & Geranium soothing oil, ideal for pilgrimages and retreats.'
   },
   {
@@ -203,7 +203,7 @@ const PRODUCTS = [
     subtitle: 'Devotional Keepsake Jewelry',
     price: 33.00,
     stock: 'In Stock',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-31-at-7.08.42-PM-1.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-31-at-7.08.42-PM-1.jpeg?v=2',
     description: 'Artisan Our Lady of Guadalupe devotional pendant necklace with vibrant enamel detailing and gold-tone chain.'
   }
 ];
@@ -289,7 +289,7 @@ const GALLERY_ARCHIVE = [
   {
     title: 'Apparition Hill & Blue Cross Walk',
     location: 'Medjugorje Pilgrimage',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg?v=2'
   },
   {
     title: 'Our Lady of Grace Traveling Statue',
@@ -304,7 +304,7 @@ const GALLERY_ARCHIVE = [
   {
     title: 'Children & Family Prayer Gathering',
     location: 'Italy & Medjugorje',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg?v=2'
   },
   {
     title: 'Marian Shrine Procession',
@@ -314,7 +314,7 @@ const GALLERY_ARCHIVE = [
   {
     title: 'Mother’s Spiritual Fellowship',
     location: 'Rosa Mystica Retreat Archive',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-05-at-2.42.40-AM-768x994.jpeg?v=2'
   },
   {
     title: 'Pilgrim Leadership & Fellowship',
@@ -324,7 +324,7 @@ const GALLERY_ARCHIVE = [
   {
     title: 'Handcrafted Pilgrimage Care Packages',
     location: 'Dacula, Georgia',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg'
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg?v=2'
   }
 ];
 
@@ -335,7 +335,7 @@ const BLOG_POSTS = [
     date: 'July 26, 2026',
     title: "A Couple's Perspective: A Transformative Pilgrimage to Medjugorje",
     excerpt: 'A couple reflects on the deep peace of Medjugorje, praying the Angelus with a local driver, climbing Apparition Hill, and the graces they received together.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg?v=2',
     content: [
       'When we embarked on our pilgrimage to Medjugorje with ATM Travels, we did not know just how deeply Our Lady Queen of Peace would touch our marriage and family life.',
       'From the moment we arrived, even praying the Angelus in the car on the way to our family-style lodging, we experienced a palpable sense of peace. Every detail—from daily Holy Mass and Eucharistic Adoration at St. James to climbing Apparition Hill and Cross Mountain—invited us to slow down and listen to God.',
@@ -348,7 +348,7 @@ const BLOG_POSTS = [
     date: 'November 2026',
     title: 'Preparing Mind, Spirit, and Luggage for a Family Pilgrimage',
     excerpt: 'Why a pilgrimage with children and family is unlike an ordinary vacation — and practical ways to cultivate intentional prayer before departure.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg?v=2',
     content: [
       'A Catholic pilgrimage with your children and family is far more than a vacation — it is a sacred invitation to step away from everyday distractions and walk together toward Christ through the Blessed Mother.',
       'Before departure, we encourage families to establish a simple daily rhythm of prayer: praying the Flame of Love Rosary together at 8:00 PM, keeping a small prayer intention journal for each child, and going to Confession as a family.',
@@ -374,7 +374,7 @@ const BLOG_POSTS = [
     date: 'October 2026',
     title: 'The Story Behind Our Handcrafted Calendula & Good Samaritan Balms',
     excerpt: 'How traditional botanical oils, soaps, and salves support daily self-care and comfort travelers along the way.',
-    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg',
+    image: 'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg?v=2',
     content: [
       'Every balm, salve, and soap in the ATM Travels store is handcrafted in small batches in Dacula, Georgia using slow-infused golden calendula blossoms, pure beeswax, and traditional aromatic essential oils.',
       'Inspired by Catholic herbal traditions such as the Balm of the Good Samaritan and Balm of Saint Michael, our 1 oz travel oils and soothing salves are designed to accompany pilgrims on long flights and mountain walks while supporting the mission of April-Marie’s Traveling Mary.'
@@ -1374,7 +1374,7 @@ function renderHomePage() {
               <img
                 src="${HERO_PORTRAIT_URL}"
                 alt="April-Marie's Traveling Mary Founder &amp; Pilgrim"
-                onerror="this.onerror=null; this.src='https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg';"
+                onerror="this.onerror=null; this.src='https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg?v=2';"
               />
             </div>
             <div class="v2-seal-floating-badge">
@@ -1841,7 +1841,7 @@ function renderChildrensMinistryPage() {
       "Children's Ministry",
       "Children's Ministry",
       '“Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these.” — Matthew 19:14',
-      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg'
+      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg?v=2'
     )}
 
     <section class="section">
@@ -2237,7 +2237,7 @@ function renderEventsPage() {
       'Sacred Pilgrimages',
       'Sacred Pilgrimages & Retreats',
       'Automated booking, Stripe installment options, and Marian shrine itineraries for 2027.',
-      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg'
+      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-08-28-at-9.58.14-PM-768x960.jpeg?v=2'
     )}
 
     <section class="section" style="padding-top: 48px;">
@@ -2527,7 +2527,7 @@ function renderPastEventsPage() {
       'Past Events',
       'Past Events',
       'Looking back at graces received along the way across our pilgrimages, retreats, and children’s consecrations.',
-      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg'
+      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg?v=2'
     )}
 
     <section class="section">
@@ -2584,7 +2584,7 @@ function renderGalleryPage() {
       'Gallery',
       'Gallery',
       'Moments of grace from our family pilgrimages, Rosa Mystica retreats, and Traveling Mary home visits.',
-      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg'
+      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg?v=2'
     )}
 
     <section class="section">
@@ -2677,7 +2677,7 @@ function renderProductPage() {
       'Store',
       'Handcrafted Botanical & Devotional Store',
       'Natural calendula oils, traditional Catholic herbal balms, soaps, and devotional keepsakes handcrafted in Dacula, Georgia.',
-      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg'
+      'https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-30-at-11.41.20-PM-683x1024.jpeg?v=2'
     )}
 
     <section class="section">
