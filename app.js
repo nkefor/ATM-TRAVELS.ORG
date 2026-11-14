@@ -38,7 +38,7 @@ const UPCOMING_EVENTS = [
     priceBadge: 'From $1,399 / person · $500 Deposit',
     tiers: [
       { label: 'Registration Deposit (Due by Jan 31, 2027)', price: 500 },
-      { label: 'Double Room Second Installment (Due by May 17, 2027)', price: 899 },
+      { label: 'Double Room Second Installment ($899 + $40.87 Fees — Due by May 17, 2027)', price: 939.87 },
       { label: 'Single Room Second Installment (Due by May 17, 2027)', price: 1050 }
     ]
   },
@@ -2127,11 +2127,11 @@ const CALCULATOR_PLANS = {
     stripeDepositUrl: 'https://buy.stripe.com/9B64gz2Ro3CV6Z00KwfAc0g'
   },
   medjugorje: {
-    name: 'Children & Family Pilgrimage to Italy, Croatia & Medjugorje',
+    name: 'Children & Family Pilgrimage to Medjugorje',
     deposit: 500,
     depositDue: 'Jan 31, 2027',
-    doubleBalance: 850,
-    singleBalance: 975,
+    doubleBalance: 939.87,
+    singleBalance: 1050,
     balanceDue: 'May 17, 2027',
     stripeDepositUrl: 'https://buy.stripe.com/fZubJ1fEaehzbfgdxifAc0j'
   },
@@ -2390,8 +2390,8 @@ function renderEventsPage() {
             </div>
 
             <div class="events-installment-card">
-              <h2>Double Room Second Installment($850)</h2>
-              <p>The remaining balance for double room must be paid on or before May 17th, 2027.</p>
+              <h2>Double Room Second Installment($899+ $40.87 Fees) ($939.87)</h2>
+              <p>The remaining balance of $899 + $40.87 fees ($939.87 total) for double room must be paid on or before May 17th, 2027.</p>
               <a class="btn-sky-blue" href="https://buy.stripe.com/eVq4gzajQddv8341OAfAc0r" target="_blank" rel="noopener noreferrer">Second installment</a>
             </div>
 
