@@ -1545,7 +1545,7 @@ function renderHomePage() {
             <span class="section-tag">HANDCRAFTED BOTANICAL &amp; DEVOTIONAL STORE</span>
             <h2 style="margin-bottom:18px;">Explore Our Featured Products</h2>
             <p>Discover our handcrafted collection of botanical oils, nourishing balms (including Balm of the Good Samaritan and Balm of Saint Michael), soothing calendula soaps, and devotional keepsakes made with thoughtfully selected ingredients in Dacula, Georgia.</p>
-            <a href="#/product" class="btn btn-gold">Shop All Products</a>
+            <a href="#/product" class="btn btn-gold">Shop All 10 Store Products</a></div></div><div class="products-grid" style="margin-top:36px;">${renderProductCardsHTML(PRODUCTS.slice(0, 6))}</div><div style="text-align:center; margin-top:28px;"><a href="#/product" class="btn btn-outline-navy">View All 10 Store Products &rarr;</a>
           </div>
         </div>
       </div>
@@ -2651,9 +2651,9 @@ function renderProductCardsHTML(list) {
     return `<div style="grid-column:1/-1; text-align:center; padding:48px 20px; color:var(--slate-text);">No products matched your filter. <button class="btn btn-outline-navy btn-sm" style="margin-left:10px;" onclick="state.shopCategory='All'; state.shopSearch=''; renderApp();">Reset Filters</button></div>`;
   }
   return list.map(p => `
-    <article class="product-card">
+    <article class="product-card revealed">
       <div class="product-img-wrap" onclick="navigate('/item/${p.slug}')">
-        <img src="${p.image}" alt="${p.name}" onerror="handleImgError(this, '${p.name}')">
+        <img src="${p.image}" alt="${p.name}" onerror="handleImgError(this, '${p.name.replace(/'/g, "\'")}')">
       </div>
       <div class="product-card-body">
         <div style="font-family:var(--font-serif); font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-hover); font-weight:700; margin-bottom:4px;">${p.category}</div>
@@ -2702,7 +2702,7 @@ function renderProductPage() {
         </div>
 
         <div id="shop-products-grid" class="products-grid ${state.shopView === 'list' ? 'list-view' : ''}">
-          ${renderProductCardsHTML(filtered)}
+          ${renderProductCardsHTML(filtered)}</div><div class="section-header centered" style="margin-top:64px;"><span class="section-tag">ARTISAN BOTANICAL &amp; DEVOTIONAL SHOWCASE</span><h2>Store Product Photo Gallery</h2><p class="serif-italic-sub">Handcrafted in small batches in Dacula, Georgia — click any photo to zoom fullscreen or view the product.</p><span class="gold-divider-center"></span></div><div class="gallery-grid">${PRODUCTS.map(item => `<div class="gallery-card" onclick="openLightbox('${item.image}', '${item.name.replace(/'/g, "\\'")} — ${item.category}')"><img src="${item.image}" alt="${item.name}" onerror="handleImgError(this, '${item.name.replace(/'/g, "\\'")}')"><div class="gallery-card-caption"><div style="font-family:var(--font-serif); font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-hover); margin-bottom:4px;">${item.category} · $${item.price.toFixed(2)}</div><h3 style="font-size:16px; margin-bottom:8px;">${item.name}</h3><button type="button" class="btn btn-outline-navy btn-sm" onclick="event.stopPropagation(); navigate('/item/${item.slug}')">View Product</button></div></div>`).join('')}
         </div>
       </div>
     </section>
@@ -3073,7 +3073,7 @@ function initScrollReveal() {
     });
   }, { threshold: 0.06 });
   els.forEach(el => {
-    el.classList.add('reveal-on-scroll');
+    el.classList.add('reveal-on-scroll', 'revealed');
     obs.observe(el);
   });
 }
