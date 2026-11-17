@@ -585,7 +585,7 @@ function handleImgError(imgEl, label = 'ATM Travels') {
   imgEl.onerror = null;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
     <rect width="100%" height="100%" fill="#16191e"/>
-    <circle cx="300" cy="250" r="80" fill="none" stroke="#c4a15a" stroke-width="3"/>
+    
     <text x="300" y="258" text-anchor="middle" fill="#c4a15a" font-family="Georgia, serif" font-size="22" font-weight="600">ATM TRAVELS</text>
     <text x="300" y="380" text-anchor="middle" fill="#f5f5f4" font-family="sans-serif" font-size="18">${label.replace(/[<>&"']/g, '')}</text>
   </svg>`;
@@ -1377,7 +1377,7 @@ function renderHomePage() {
                 onerror="this.onerror=null; this.src='https://atm-travels.org/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-04-at-9.45.19-AM-1.jpeg';"
               />
             </div>
-            <div class="v2-seal-floating-badge">
+            <div class="v2-seal-floating-badge" style="display:none !important;">
               <img
                 src="${SEAL_IMG_URL}"
                 alt="ATM Travels Official Seal"
@@ -3138,7 +3138,7 @@ function renderApp() {
     mainEl.innerHTML = renderHomePage();
   }
 
-  updateActiveNavLinks();
+  updateActiveNavLinks(); const bl = document.querySelector('.brand-logo'); if (bl) bl.innerHTML = '<span style="font-family:var(--font-serif); font-size:20px; font-weight:700; color:var(--gold-accent); letter-spacing:0.06em;">ATM Travels</span>'; document.querySelectorAll('.footer-brand-row, .footer-logo-img, .footer-seal-wrap, .v2-seal-floating-badge, link[rel="icon"]').forEach(el => el.remove());
   updateCountdownTimer();
   requestAnimationFrame(initScrollReveal);
 }
